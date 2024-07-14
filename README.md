@@ -11,14 +11,14 @@ Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 
 *The following new directories are required for the deferred implementation to work:*
 
-`src/materialsystem/`
-`src/game/client/deferred/`
-`src/game/server/deferred/`
-`src/game/shared/deferred/`
+`materialsystem/`
+`game/client/deferred/`
+`game/server/deferred/`
+`game/shared/deferred/`
 
 \+ shader compiling:
-`src/dx9sdk/`
-`src/devtools/`
+`dx9sdk/`
+`devtools/`
 
 A few changes in standard files have to be made first too.
 All of them have comments like this:
@@ -26,13 +26,13 @@ All of them have comments like this:
 
 *affected files that require updating* (not all changes have a comment since there are too many, use diff):
 
-`src/game/client/cdll_client_int.cpp`
-`src/game/client/viewrender.h`
-`src/game/client/viewrender.cpp`
-`src/game/client/flashlighteffect.h`
-`src/game/client/flashlighteffect.cpp`
-`src/game/server/gameinterface.cpp`
-`src/public/renderparm.h`
+`game/client/cdll_client_int.cpp`
+`game/client/viewrender.h`
+`game/client/viewrender.cpp`
+`game/client/flashlighteffect.h`
+`game/client/flashlighteffect.cpp`
+`game/server/gameinterface.cpp`
+`public/renderparm.h`
 
 
 
