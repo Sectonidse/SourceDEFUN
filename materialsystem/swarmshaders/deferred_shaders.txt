@@ -17,6 +17,11 @@ lightingpass_global_ps30.fxc
 lightingpass_point_ps30.fxc
 lightingpass_spot_ps30.fxc
 
+pbr_ps20b.fxc
+pbr_ps30.fxc
+pbr_vs20b.fxc
+pbr_vs30.fxc
+
 screenspace_shading_ps30.fxc
 screenspace_combine_ps30.fxc
 
