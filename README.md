@@ -38,7 +38,7 @@ All of them have comments like this:
 
 *Most core tweaks and changes can be done in the following headers:*
 
-`src/materialsystem/swarmshaders/deferred_global_common.h`
-`src/game/client/deferred/deferred_client_common.h`
-`src/game/shared/deferred/deferred_shared_common.h`
-`src/game/server/deferred/deferred_server_common.h`
+`materialsystem/swarmshaders/deferred_global_common.h`
+`game/client/deferred/deferred_client_common.h`
+`game/shared/deferred/deferred_shared_common.h`
+`game/server/deferred/deferred_server_common.h`
