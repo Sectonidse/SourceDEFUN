@@ -1,4 +1,4 @@
-//===== Copyright © 1996-2005, Valve Corporation, All rights reserved. ======//
+//===== Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ======//
 //
 // Purpose: 
 //
@@ -18,13 +18,18 @@
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
+#define PBR_CHANGE
 
 IMPLEMENT_CLIENTCLASS_DT(C_PhysicsProp, DT_PhysicsProp, CPhysicsProp)
 	RecvPropBool( RECVINFO( m_bAwake ) ),
 	RecvPropInt( RECVINFO( m_spawnflags ) ),
 END_RECV_TABLE()
 
-ConVar r_PhysPropStaticLighting( "r_PhysPropStaticLighting", "1" );
+#ifdef PBR_CHANGE
+	ConVar r_PhysPropStaticLighting( "r_PhysPropStaticLighting", "0" );
+#else
+	ConVar r_PhysPropStaticLighting( "r_PhysPropStaticLighting", "1" );
+#endif
 
 // @MULTICORE (toml 9/18/2006): this visualization will need to be implemented elsewhere
 ConVar r_visualizeproplightcaching( "r_visualizeproplightcaching", "0" );
