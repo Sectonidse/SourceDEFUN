@@ -38,7 +38,7 @@ jobs:
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
     - name: Install support for Visual Studio 2010
-      run: choco install vcexpress2010
+      run: choco install vcexpress2010 -s "'http://web.archive.org/web/20190127090820/https://download.microsoft.com/download/1/D/9/1D9A6C0E-FC89-43EE-9658-B9F0E3A76983/vc_web.exe'"
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
