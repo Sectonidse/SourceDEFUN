@@ -1,6 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+# WARNING TO WINDOWS USERS: This file might not be up to date since my [Sectonidse] primary OS is Linux. Just in case you know.
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "game\client\swarm_skeleton_client.vcxproj", "{A26C0361-6B09-9E3D-5194-C9CB89243710}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "game\server\swarm_skeleton_server.vcxproj", "{5F66F048-1D65-4D70-A050-12AB030009BE}"
