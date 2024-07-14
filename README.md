@@ -3,9 +3,18 @@
 
 **November 5, 2004: Valve releases Source Engine's SDK into public. People started making mods for the bestselling game, Half-Life 2. Years have passed and now we're stuck with Source SDK 2013, being the last publicly released and outdated since release** (based on Orange box's Source SDK, while Portal 2 branch is already finished) **SDK. Strata Source team formed to fix this, tried to be community's hero, but failed, because Valve's Licensing doesn't allow making licensed SDK to be released publicly. *It's time to do something about it.***
 
+> [!NOTE]
+> Just saying, I am not trying to demean Strata Source and so sorry if that sounded mean.
+
 **Introducing SourceDEFUN: Based on Alien Swarm SDK, forked off Deferred repo. It promises to be as modern as the SDK's limitations allow it to be.** DEFUN means a function in LISP's programming language, referring to Source Engine's roots: from Quake, to GoldSRC, to Source itself.
 
 Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
+
+## Requirements for Windows:
+> [!NOTE]
+> This wasn't tested
+
+You have to use Visual Studio 2010, as referenced by main solution file.
 
 ## Information
 
