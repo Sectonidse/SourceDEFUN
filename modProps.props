@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <appsDir>C:\Steam\steamapps</appsDir>
-    <modName>swarm-deferred-build</modName>
+    <modName>SourceDEFUN</modName>
     <debugCommandLine>-sw -w 1920 -h 1080 -allowdebug -console -shaderedit</debugCommandLine>
   </PropertyGroup>
   <PropertyGroup />
