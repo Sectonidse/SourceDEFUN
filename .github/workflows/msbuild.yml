@@ -45,4 +45,4 @@ jobs:
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: |
-        cd "C:/Program Files (x86)/MSBuild/12.0/Bin" && MSBuild.exe /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+        "C:/Program Files (x86)/MSBuild/12.0/Bin/MSBuild.exe" /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
