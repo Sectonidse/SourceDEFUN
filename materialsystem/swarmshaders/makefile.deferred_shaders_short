@@ -120,3 +120,56 @@ fxctmp9_tmp\radiosity_blend_ps30.inc shaders\fxc\radiosity_blend_ps30.vcs: radio
 	echo common_lighting_fxc.h>> filestocopy.txt
 	echo common_deferred_fxc.h>> filestocopy.txt
 
+
+// PBR CHANGES: Modified by Sectonidse
+// Maaan, it looks complicated. Let's hope i rewrote it correctly.
+
+
+fxctmp9_tmp\pbr_ps30.inc shaders\fxc\pbr_ps30.vcs: pbr_ps30.fxc ..\..\devtools\bin\updateshaders.pl ..\..\devtools\bin\fxc_prep.pl common_shadowmapping_fxc.h common_fxc.h deferred_global_common.h common_ps_fxc.h common_pragmas.h common_hlsl_cpp_consts.h common_lighting_fxc.h common_deferred_fxc.h
+	perl ..\..\devtools\bin\fxc_prep.pl   -source "..\.." pbr_ps30.fxc-----pbr_ps30
+	echo pbr_ps30.fxc>> filestocopy.txt
+	echo common_shadowmapping_fxc.h>> filestocopy.txt
+	echo common_fxc.h>> filestocopy.txt
+	echo deferred_global_common.h>> filestocopy.txt
+	echo common_ps_fxc.h>> filestocopy.txt
+	echo common_pragmas.h>> filestocopy.txt
+	echo common_hlsl_cpp_consts.h>> filestocopy.txt
+	echo common_lighting_fxc.h>> filestocopy.txt
+	echo common_deferred_fxc.h>> filestocopy.txt
+
+fxctmp9_tmp\pbr_ps20b.inc shaders\fxc\pbr_ps20b.vcs: pbr_ps20b.fxc ..\..\devtools\bin\updateshaders.pl ..\..\devtools\bin\fxc_prep.pl common_shadowmapping_fxc.h common_fxc.h deferred_global_common.h common_ps_fxc.h common_pragmas.h common_hlsl_cpp_consts.h common_lighting_fxc.h common_deferred_fxc.h
+	perl ..\..\devtools\bin\fxc_prep.pl   -source "..\.." pbr_ps20b.fxc-----pbr_ps20b
+	echo pbr_ps20b.fxc>> filestocopy.txt
+	echo common_shadowmapping_fxc.h>> filestocopy.txt
+	echo common_fxc.h>> filestocopy.txt
+	echo deferred_global_common.h>> filestocopy.txt
+	echo common_ps_fxc.h>> filestocopy.txt
+	echo common_pragmas.h>> filestocopy.txt
+	echo common_hlsl_cpp_consts.h>> filestocopy.txt
+	echo common_lighting_fxc.h>> filestocopy.txt
+	echo common_deferred_fxc.h>> filestocopy.txt
+
+fxctmp9_tmp\pbr_vs30.inc shaders\fxc\pbr_vs30.vcs: pbr_vs30.fxc ..\..\devtools\bin\updateshaders.pl ..\..\devtools\bin\fxc_prep.pl common_shadowmapping_fxc.h common_fxc.h deferred_global_common.h common_ps_fxc.h common_pragmas.h common_hlsl_cpp_consts.h common_lighting_fxc.h common_deferred_fxc.h
+	perl ..\..\devtools\bin\fxc_prep.pl   -source "..\.." pbr_vs30.fxc-----pbr_vs30
+	echo pbr_vs30.fxc>> filestocopy.txt
+	echo common_shadowmapping_fxc.h>> filestocopy.txt
+	echo common_fxc.h>> filestocopy.txt
+	echo deferred_global_common.h>> filestocopy.txt
+	echo common_ps_fxc.h>> filestocopy.txt
+	echo common_pragmas.h>> filestocopy.txt
+	echo common_hlsl_cpp_consts.h>> filestocopy.txt
+	echo common_lighting_fxc.h>> filestocopy.txt
+	echo common_deferred_fxc.h>> filestocopy.txt
+
+fxctmp9_tmp\pbr_vs20b.inc shaders\fxc\pbr_vs20b.vcs: pbr_vs20b.fxc ..\..\devtools\bin\updateshaders.pl ..\..\devtools\bin\fxc_prep.pl common_shadowmapping_fxc.h common_fxc.h deferred_global_common.h common_ps_fxc.h common_pragmas.h common_hlsl_cpp_consts.h common_lighting_fxc.h common_deferred_fxc.h
+	perl ..\..\devtools\bin\fxc_prep.pl   -source "..\.." pbr_vs20b.fxc-----pbr_vs20b
+	echo pbr_vs20b.fxc>> filestocopy.txt
+	echo common_shadowmapping_fxc.h>> filestocopy.txt
+	echo common_fxc.h>> filestocopy.txt
+	echo deferred_global_common.h>> filestocopy.txt
+	echo common_ps_fxc.h>> filestocopy.txt
+	echo common_pragmas.h>> filestocopy.txt
+	echo common_hlsl_cpp_consts.h>> filestocopy.txt
+	echo common_lighting_fxc.h>> filestocopy.txt
+	echo common_deferred_fxc.h>> filestocopy.txt
+
