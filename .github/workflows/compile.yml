@@ -54,11 +54,8 @@ jobs:
     - name: Compile Shaders
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        echo i cant believe im doing this
-        dir
         cd ./materialsystem/swarmshaders/
-        dir
-        ./buildshaders.bat game_shader_generic_deferred
+        ./buildshaders.bat deferred_shaders
     
     - name: Build (VS2022 Version)
       working-directory: ${{env.GITHUB_WORKSPACE}}
