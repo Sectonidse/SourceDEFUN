@@ -33,6 +33,8 @@ jobs:
       with:
         perl-version: "5.32"
         distribution: strawberry
+    - run: cpanm --installdeps .
+    - run: prove -lv t
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
