@@ -55,6 +55,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cd ./materialsystem/swarmshaders/
+        dir ../../devtools/bin/
         ./buildshaders.bat deferred_shaders
     
     - name: Build (VS2022 Version)
