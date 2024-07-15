@@ -54,7 +54,7 @@ jobs:
     - name: Compile Shaders
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        echo i can't believe im doing this
+        echo i cant believe im doing this
         dir
         cd ./materialsystem/swarmshaders/
         dir
