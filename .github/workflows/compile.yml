@@ -29,12 +29,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: shogo82148/actions-setup-perl@v1
-      with:
-        perl-version: "5.32"
-        distribution: strawberry
-    - run: cpanm --installdeps .
-    - run: prove -lv t
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
@@ -43,8 +37,8 @@ jobs:
     #  working-directory: ${{env.GITHUB_WORKSPACE}}
     #  run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
-    #- name: Install Strawberry Perl for Shaders compilation
-    #  run: choco install strawberryperl
+    - name: Install Strawberry Perl for Shaders compilation
+      run: choco install strawberryperl
 
     #- name: Build (Legacy VS2010 Version)
     #  working-directory: ${{env.GITHUB_WORKSPACE}}
