@@ -11,10 +11,9 @@
 Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 
 ## Requirements for Windows:
-> [!NOTE]
-> This wasn't tested
 
-You have to use Visual Studio 2010, as referenced by main solution file.
+You have to use Visual Studio 2022.
+To compile the shaders you must install Strawberry Perl, then execute ./materialsystem/swarmshaders/buildshaders.bat
 
 ## Information
 
