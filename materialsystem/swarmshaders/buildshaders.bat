@@ -122,15 +122,15 @@ if exist vcslist.txt del /f /q vcslist.txt
 REM ****************
 REM Generate a makefile for the shader project
 REM ****************
-perl ..\..\devtools\bin\updateshaders.pl" -source "%SrcDirBase%" %inputbase%
+perl %SrcDirBase%\devtools\bin\updateshaders.pl" -source "%SrcDirBase%"%inputbase%
 
 
 REM ****************
 REM Run the makefile, generating minimal work/build list for fxc files, go ahead and compile vsh and psh files.
 REM ****************
-rem nmake /S /C -f makefile.%inputbase% clean > clean.txt 2>&1
+rem cmake -G "NMake Makefiles" /S /C -f makefile.%inputbase% clean > clean.txt 2>&1
 echo Building inc files, asm vcs files, and VMPI worklist for %inputbase%...
-nmake /S /C -f makefile.%inputbase%
+cmake -G "NMake Makefiles" /S /C -f makefile.%inputbase%
 
 REM ****************
 REM Copy the inc files to their target
