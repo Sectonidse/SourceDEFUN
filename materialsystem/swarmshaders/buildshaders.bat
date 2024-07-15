@@ -122,7 +122,7 @@ if exist vcslist.txt del /f /q vcslist.txt
 REM ****************
 REM Generate a makefile for the shader project
 REM ****************
-perl %SrcDirBase%\devtools\bin\updateshaders.pl" -source "%SrcDirBase%"%inputbase%
+perl %SrcDirBase%\devtools\bin\updateshaders.pl" -source .
 
 
 REM ****************
