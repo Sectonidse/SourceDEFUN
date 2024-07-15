@@ -17,7 +17,7 @@ setlocal
 set arg_filename=%1
 set shadercompilecommand=shadercompile.exe
 set targetdir=shaders
-set SrcDirBase=..\..
+set SrcDirBase=../..
 set shaderDir=shaders
 set SDKArgs=
 set SHADERINCPATH=vshtmp9/... fxctmp9/... include/...
@@ -125,7 +125,7 @@ if exist vcslist.txt del /f /q vcslist.txt
 REM ****************
 REM Generate a makefile for the shader project
 REM ****************
-perl %SrcDirBase%\devtools\bin\updateshaders.pl" -source .
+perl %SrcDirBase%/devtools/bin/updateshaders.pl" -source .
 
 
 REM ****************
