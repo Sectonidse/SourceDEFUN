@@ -10,3 +10,5 @@ materialsystem/swarmshaders/Release_dx9/
 ipch/
 materialsystem/shaderlib/Debug/
 materialsystem/shaderlib/Release/
+*.vsidx
+/.vs
