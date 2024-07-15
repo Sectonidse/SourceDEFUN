@@ -37,8 +37,8 @@ jobs:
     #  working-directory: ${{env.GITHUB_WORKSPACE}}
     #  run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
-    - name: Install support for Visual Studio 2010..?
-      run: choco install microsoft-build-tools-2013
+    #- name: Install support for Visual Studio 2010..?
+    #  run: choco install microsoft-build-tools-2013
 
     #- name: Build (Legacy Version)
     #  working-directory: ${{env.GITHUB_WORKSPACE}}
