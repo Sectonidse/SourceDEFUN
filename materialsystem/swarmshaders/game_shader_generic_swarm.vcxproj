@@ -297,6 +297,10 @@ if exist "$(TargetDir)"$(ProjectName).map copy "$(TargetDir)"$(ProjectName).map 
     <None Include="lightingpass_global_ps30.fxc" />
     <None Include="lightingpass_point_ps30.fxc" />
     <None Include="lightingpass_spot_ps30.fxc" />
+    <None Include="pbr_ps30.fxc" />
+    <None Include="pbr_ps20b.fxc" />
+    <None Include="pbr_vs20.fxc" />
+    <None Include="pbr_vs30.fxc" />
     <None Include="radiosity_blend_ps30.fxc" />
     <None Include="radiosity_gen_global_ps30.fxc" />
     <None Include="radiosity_gen_vs30.fxc" />
