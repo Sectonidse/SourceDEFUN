@@ -253,15 +253,15 @@ if exist "$(TargetDir)"$(ProjectName).map copy "$(TargetDir)"$(ProjectName).map 
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\dx9sdk\lib\d3dx9.lib" />
-    <Library Include="..\..\lib\public\interfaces.lib" />
-    <Library Include="..\..\lib\public\mathlib.lib" />
-    <Library Include="..\..\lib\public\matsys_controls.lib" />
-    <Library Include="..\..\lib\public\shaderlib.lib" />
-    <Library Include="..\..\lib\public\tier0.lib" />
-    <Library Include="..\..\lib\public\tier1.lib" />
-    <Library Include="..\..\lib\public\tier2.lib" />
-    <Library Include="..\..\lib\public\tier3.lib" />
-    <Library Include="..\..\lib\public\vstdlib.lib" />
+    <Library Include="..\..\public\interfaces.lib" />
+    <Library Include="..\..\public\mathlib.lib" />
+    <Library Include="..\..\public\matsys_controls.lib" />
+    <Library Include="..\..\public\shaderlib.lib" />
+    <Library Include="..\..\public\tier0.lib" />
+    <Library Include="..\..\public\tier1.lib" />
+    <Library Include="..\..\public\tier2.lib" />
+    <Library Include="..\..\public\tier3.lib" />
+    <Library Include="..\..\public\vstdlib.lib" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuildStep Include="stdshader_dx9_20b.txt">
