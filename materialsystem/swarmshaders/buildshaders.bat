@@ -1,12 +1,6 @@
 @echo off
 
-set TTEXE=..\..\devtools\bin\timeprecise.exe
-if not exist %TTEXE% goto no_ttexe
-goto no_ttexe_end
-
-:no_ttexe
 set TTEXE=time /t
-:no_ttexe_end
 
 echo.
 rem echo ==================== buildshaders %* ==================
@@ -26,7 +20,7 @@ set targetdir=shaders
 set SrcDirBase=..\..
 set shaderDir=shaders
 set SDKArgs=
-set SHADERINCPATH=vshtmp9/... fxctmp9/...
+set SHADERINCPATH=vshtmp9/... fxctmp9/... include/...
 
 
 if "%1" == "" goto usage
@@ -128,7 +122,7 @@ if exist vcslist.txt del /f /q vcslist.txt
 REM ****************
 REM Generate a makefile for the shader project
 REM ****************
-perl "%SrcDirBase%\devtools\bin\updateshaders.pl" -source "%SrcDirBase%" %inputbase%
+perl ..\..\devtools\bin\updateshaders.pl" -source "%SrcDirBase%" %inputbase%
 
 
 REM ****************
@@ -166,7 +160,7 @@ echo %SDKBINDIR%\tier0.dll >> filestocopy.txt
 REM ****************
 REM Cull duplicate entries in work/build list
 REM ****************
-if exist filestocopy.txt type filestocopy.txt | perl "%SrcDirBase%\devtools\bin\uniqifylist.pl" > uniquefilestocopy.txt
+if exist filestocopy.txt type filestocopy.txt | perl "..\..\devtools\bin\uniqifylist.pl" > uniquefilestocopy.txt
 if exist filelistgen.txt if not "%dynamic_shaders%" == "1" (
     echo Generating action list...
     copy filelistgen.txt filelist.txt >nul
