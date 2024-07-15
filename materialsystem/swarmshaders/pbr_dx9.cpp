@@ -33,7 +33,7 @@ static ConVar mat_fullbright( "mat_fullbright", "0", FCVAR_CHEAT );
 static ConVar mat_specular( "mat_specular", "1" );
 static ConVar mat_pbr_force_20b( "mat_pbr_force_20b", "0", FCVAR_CHEAT );
 static ConVar mat_pbr_parallaxmap( "mat_pbr_parallaxmap", "1" );
-extern ConVar mat_allow_parallax_cubemaps;
+// extern ConVar mat_allow_parallax_cubemaps; // Disable it for now...
 
 // Variables for this shader
 struct PBR_Vars_t
@@ -206,7 +206,7 @@ BEGIN_VS_SHADER(PBR, "PBR shader")
 		}
 
 		// Cubemap parallax correction requires all 4 lines
-		if ( info.m_nEnvmapParallax != -1 && !( mat_allow_parallax_cubemaps.GetBool() && params[info.m_nEnvmapParallax]->IsDefined() && IS_PARAM_DEFINED( info.m_nEnvmapParallaxObb1 ) && IS_PARAM_DEFINED( info.m_nEnvmapParallaxObb2 ) && IS_PARAM_DEFINED( info.m_nEnvmapParallaxObb3 ) && IS_PARAM_DEFINED( info.m_nEnvmapOrigin ) ) )
+		if ( info.m_nEnvmapParallax != -1 && !( params[info.m_nEnvmapParallax]->IsDefined() && IS_PARAM_DEFINED( info.m_nEnvmapParallaxObb1 ) && IS_PARAM_DEFINED( info.m_nEnvmapParallaxObb2 ) && IS_PARAM_DEFINED( info.m_nEnvmapParallaxObb3 ) && IS_PARAM_DEFINED( info.m_nEnvmapOrigin ) ) )
 		{
 			params[info.m_nEnvmapParallax]->SetIntValue( 0 );
 		}
