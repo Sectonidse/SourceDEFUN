@@ -68,7 +68,10 @@ if not exist %SDKBINDIR%\shadercompile.exe goto NoShaderCompile
 set ChangeToDir=%SDKBINDIR%
 
 if /i "%4" NEQ "-source" goto NoSourceDirSpecified
+
+goto SKIPBULLSHITCHANGE
 set SrcDirBase=%~5
+:SKIPBULLSHITCHANGE
 
 REM ** use the -game parameter to tell us where to put the files
 set targetdir=%~3\shaders
@@ -122,15 +125,15 @@ if exist vcslist.txt del /f /q vcslist.txt
 REM ****************
 REM Generate a makefile for the shader project
 REM ****************
-perl .\devtools\bin\updateshaders.pl" -source .
+perl %SrcDirBase%\devtools\bin\updateshaders.pl" -source .
 
 
 REM ****************
 REM Run the makefile, generating minimal work/build list for fxc files, go ahead and compile vsh and psh files.
 REM ****************
-rem cmake -G "NMake Makefiles" /S /C -f makefile.%inputbase% clean > clean.txt 2>&1
+rem cmake -G "NMake Makefiles" /S /C /F makefile.%inputbase% clean > clean.txt 2>&1
 echo Building inc files, asm vcs files, and VMPI worklist for %inputbase%...
-cmake -G "NMake Makefiles" /S /C -f makefile.%inputbase%
+cmake -G "NMake Makefiles" /S /C /F makefile.%inputbase%
 
 REM ****************
 REM Copy the inc files to their target
@@ -160,7 +163,7 @@ echo %SDKBINDIR%\tier0.dll >> filestocopy.txt
 REM ****************
 REM Cull duplicate entries in work/build list
 REM ****************
-if exist filestocopy.txt type filestocopy.txt | perl "..\..\devtools\bin\uniqifylist.pl" > uniquefilestocopy.txt
+if exist filestocopy.txt type filestocopy.txt | perl "%SrcDirBase%\devtools\bin\uniqifylist.pl" > uniquefilestocopy.txt
 if exist filelistgen.txt if not "%dynamic_shaders%" == "1" (
     echo Generating action list...
     copy filelistgen.txt filelist.txt >nul
