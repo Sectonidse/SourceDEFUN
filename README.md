@@ -10,6 +10,17 @@
 
 Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 
+## Special thanks to...
+[maksw2](https://github.com/maksw2) - for being the first contributor and helping with compilation errors!
+
+## Features:
+- [x] Deferred lighting (from Alien Swarm Deferred)
+- [x] PBR (Physically based Rendering)
+- [ ] Ambient Occlusion
+- [ ] First Person Camera, ported to Alien Swarm branch
+
+...and probably more soon!
+
 ## Requirements for Windows:
 
 You have to use Visual Studio 2022.
