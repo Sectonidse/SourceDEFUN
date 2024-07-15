@@ -9,12 +9,12 @@
 #include "cpp_shader_constant_register_map.h"
 
 // Includes for PS30
-#include "pbr_vs30.inc"
-#include "pbr_ps30.inc"
+#include "include/pbr_vs30.inc"
+#include "include/pbr_ps30.inc"
 
 // Includes for PS20b
-#include "pbr_vs20.inc"
-#include "pbr_ps20b.inc"
+#include "include/pbr_vs20.inc"
+#include "include/pbr_ps20b.inc"
 
 // Defining samplers
 const Sampler_t SAMPLER_BASETEXTURE = SHADER_SAMPLER0;
