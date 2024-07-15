@@ -49,7 +49,7 @@ jobs:
 
     - name: Compile Shaders
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: perl ./materialsystem/swarmshaders/buildshaders.bat
+      run: ./materialsystem/swarmshaders/buildshaders.bat
     
     - name: Build (VS2022 Version)
       working-directory: ${{env.GITHUB_WORKSPACE}}
