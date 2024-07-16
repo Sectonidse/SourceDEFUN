@@ -133,7 +133,10 @@ inline float LoopingLerp_Hermite( float /*current*/, float t, float p0, float p1
 			// see if we need to fix up p0
 			// important for vars that are decreasing from p0->p1->p2 where
 			// p1 is fixed up relative to p2, eg p0 = 0.2, p1 = 0.1, p2 = 0.9
-			if ( abs( p1 - p0 ) > 0.5 )
+			/* maksw fixed this */
+			float fun1 = p1 - p0;
+			float fun2 = fun1 * -1; // FIXME: this is a band-aid fix for broken abs()
+			if ( fun1 > 0.5 || fun2 > 0.5 )
 			{
 				if ( p0 < p1 )
 					p0 += 1.0f;
