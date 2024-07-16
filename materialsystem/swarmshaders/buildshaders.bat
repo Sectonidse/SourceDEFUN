@@ -129,7 +129,7 @@ REM ****************
 rem cmake -G "NMake Makefiles" /S /C /F ./makefile.%inputbase%
 echo Building inc files, asm vcs files, and VMPI worklist for %inputbase%...
 REM https://cmake.org/cmake/help/v3.30/generator/NMake%20Makefiles.html very helpful of you cmake
-cmake -G "NMake Makefiles" /S ./makefile.%inputbase%
+cmake -G "NMake Makefiles" ./materialsystem/swarmshaders/makefile.%inputbase%
 
 REM ****************
 REM Copy the inc files to their target
