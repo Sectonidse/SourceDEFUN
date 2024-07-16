@@ -38,7 +38,7 @@ jobs:
 
     - name: Compile Shaders
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: ./materialsystem/swarmshaders/buildshaders.bat game_shader_generic_swarm
+      run: ./materialsystem/swarmshaders/buildshaders.bat deferred_shaders
 
 
   Game:
