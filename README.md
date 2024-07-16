@@ -13,6 +13,7 @@ Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 
 ## Special thanks to...
 [Kristjan Skutta](https://github.com/Biohazard90) - for creating Alien Swarm Deferred!
+
 [maksw2](https://github.com/maksw2) - for being the first contributor and helping with compilation errors!
 
 
