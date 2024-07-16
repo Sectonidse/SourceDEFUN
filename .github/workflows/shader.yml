@@ -32,13 +32,14 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
+    - uses: shogo82148/actions-setup-perl@v1
+      with:
+        perl-version: "5.32"
+        distribution: strawberry
+    
+    #- name: Install Shader Dependencies
+      #run: cpan String::CRC32
 
-    # ENABLE THIS ON FIRST TIME SETUP
-    - name: Install Strawberry Perl for Shaders compilation
-      run: choco install strawberryperl
-    - name: Install Shader Dependencies
-      run: cpan String::CRC32
-
-      - name: Compile Shaders
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+    - name: Compile Shaders
+      working-directory: ${{env.GITHUB_WORKSPACE}}
       run: ./materialsystem/swarmshaders/buildshaders.bat deferred_shaders
