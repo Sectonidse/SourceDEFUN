@@ -21,7 +21,7 @@ Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 ...and probably more soon!
 
 ## Cannot do anything?
-This might be happening because of my latest ruleset. I'm don't really know how to set these up, so if you can open an issue/pr, the contact me at discussions!
+This might be happening because of my latest ruleset. I don't really know how to set these up, so if you cannot open an issue/pr, the contact me at discussions!
 
 ## Requirements for Windows:
 
