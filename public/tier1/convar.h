@@ -1,4 +1,4 @@
-//===== Copyright © 1996-2005, Valve Corporation, All rights reserved. ======//
+//===== Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ======//
 //
 // Purpose: 
 //
@@ -15,6 +15,9 @@
 #if _WIN32
 #pragma once
 #endif
+
+// This is for fixing "error LNK2019: unresolved external symbol _sscanf referenced in ConVar::InternalSetColorFromString"
+#pragma comment (lib, "legacy_stdio_definitions.lib")
 
 #include "tier0/dbg.h"
 #include "tier1/iconvar.h"
