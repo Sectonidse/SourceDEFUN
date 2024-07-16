@@ -31,14 +31,14 @@ jobs:
   Main:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      # ENABLE THIS ON FIRST TIME SETUP
-      #- name: Install Strawberry Perl for Shaders compilation
-      #  run: choco install strawberryperl
+    # ENABLE THIS ON FIRST TIME SETUP
+    #- name: Install Strawberry Perl for Shaders compilation
+    #  run: choco install strawberryperl
 
-      - name: Install Shader Dependencies
-        run: cpan String::CRC32
+    - name: Install Shader Dependencies
+      run: cpan String::CRC32
 
       - name: Compile Shaders
         working-directory: ${{env.GITHUB_WORKSPACE}}
