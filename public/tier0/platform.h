@@ -1118,7 +1118,7 @@ struct CPUInformation
 
 	tchar* m_szProcessorID;				// Processor vendor Identification.
 
-	CPUInformation(): m_Size(0){}
+	// CPUInformation(): m_Size(0){}
 };
 
 PLATFORM_INTERFACE const CPUInformation& GetCPUInformation();
