@@ -1,23 +1,21 @@
 @echo off
+echo ----------[ DEFUN buildshaders ]----------
 
 set TTEXE=time /t
-
-echo.
-echo -----<| buildshaders |>-----
 %TTEXE% -cur-Q
 set tt_start=%ERRORLEVEL%
 set tt_chkpt=%tt_start%
 
 
-REM ****************
 REM usage: buildshaders <shaderProjectName>
-REM ****************
+
+echo Program started at %TTEXE%
 
 setlocal
 set arg_filename=%1
 set shadercompilecommand=shadercompile.exe
 set targetdir=shaders
-set SrcDirBase=../..
+set SrcDirBase=.
 set shaderDir=shaders
 set SDKArgs=
 set SHADERINCPATH=vshtmp9/... fxctmp9/... include/...
@@ -82,21 +80,20 @@ REM ****************
 REM ERRORS
 REM ****************
 :InvalidGameDirectory
-echo -
-echo Error: "%~3" is not a valid game directory.
-echo (The -game directory must have a gameinfo.txt file)
-echo -
+echo "-----X[ ERROR ]X-----"
+echo ├ "%~3" is not a valid game directory.
+echo └ (The -game directory must have a gameinfo.txt file)
 goto end
 
 :NoSourceDirSpecified
-echo ERROR: If you specify -game on the command line, you must specify -source.
+echo "-----X[ ERROR ]X-----"
+echo "└ If you specify -game on the command line, you must specify -source."
 goto usage
 goto end
 
 :NoShaderCompile
-echo -
-echo - ERROR: shadercompile.exe doesn't exist in %SDKBINDIR%
-echo -
+echo "-----X[ ERROR ]X-----"
+echo "└ shadercompile.exe doesn't exist in %SDKBINDIR%"
 goto end
 
 REM ****************
@@ -123,7 +120,7 @@ if exist vcslist.txt del /f /q vcslist.txt
 REM ****************
 REM Generate a makefile for the shader project
 REM ****************
-perl %SrcDirBase%/devtools/bin/updateshaders.pl -source .
+perl %SrcDirBase%/devtools/bin/updateshaders.pl -source %inputbase%
 
 
 REM ****************
@@ -132,7 +129,8 @@ REM ****************
 rem cmake -G "NMake Makefiles" /S /C /F ./makefile.%inputbase%
 echo Building inc files, asm vcs files, and VMPI worklist for %inputbase%...
 REM https://cmake.org/cmake/help/v3.30/generator/NMake%20Makefiles.html very helpful of you cmake
-cmake -G "NMake Makefiles" /S ./makefile.%inputbase%
+cmake -G "NMake Makefiles" ./materialsystem/swarmshaders/
+nmake
 
 REM ****************
 REM Copy the inc files to their target
