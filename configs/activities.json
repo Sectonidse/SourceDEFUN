@@ -1,3 +1,4 @@
+{
 "1": [
   "This is Activities file! It has all the activities for NPC/Playermodels!                       ",
   "But how to work with it you say? Here's how:                                                   ",
@@ -28,7 +29,9 @@
   "RUN": [0, "AIM", "CROUCH", "CROUCH_AIM", "PROTECTED"],
   "WALK": [0, "AIM", "CROUCH", "CROUCH_AIM"],
   "COVER": [0, "MED", "LOW"],
-  "RANGE": ["ATTCK1", "ATTACK2", "ATTCK1_LOW", "ATTACK2_LOW"],
+  "RANGE": ["ATTACK1", "ATTACK2", "ATTACK1_LOW", "ATTACK2_LOW"],
   "DIE ": ["SIMPLE", "BACKWARD", "FORWARD", "VIOLENT", "RAGDOLL"],
   "CLIMB": ["UP", "DOWN", "DISMOUNT"]
+},
+"1": "Needs finishing!"
 }
