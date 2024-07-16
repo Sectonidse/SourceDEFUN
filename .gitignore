@@ -13,3 +13,5 @@ materialsystem/shaderlib/Release/
 /build
 /materialsystem/shaderlib/.vs
 *.user
+/materialsystem/swarmshaders/.vs
+*.filters
