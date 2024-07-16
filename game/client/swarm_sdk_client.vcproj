@@ -15,8 +15,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug_swarm"
-			IntermediateDirectory=".\Debug_swarm"
+			OutputDirectory=".\DEFUN_DebugBuild"
+			IntermediateDirectory=".\DEFUN_DebugBuild"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>
@@ -135,8 +135,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release_swarm"
-			IntermediateDirectory=".\Release_swarm"
+			OutputDirectory=".\DEFUN_ReleaseBuild"
+			IntermediateDirectory=".\DEFUN_ReleaseBuild"
 			ConfigurationType="2"
 			CharacterSet="2"
 			>

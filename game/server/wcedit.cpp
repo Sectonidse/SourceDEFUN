@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2005, Valve Corporation, All rights reserved. ============//
+//========= Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ============//
 //
 // Purpose:		Namespace for functions having to do with WC Edit mode
 //
@@ -450,6 +450,19 @@ Vector *g_EntityPositions = NULL;
 QAngle *g_EntityOrientations = NULL;
 string_t *g_EntityClassnames = NULL;
 
+// Secton: memory leak fix (https://developer.valvesoftware.com/wiki/Memory_Leak_Fixes#WCEdit)
+
+class GlobalCleanUp : public CAutoGameSystem
+{
+	void Shutdown()
+	{
+		delete [] g_EntityPositions;
+		delete [] g_EntityOrientations;
+		delete [] g_EntityClassnames;
+		delete this;
+	}
+};
+
 //-----------------------------------------------------------------------------
 // Purpose: Saves the entity's position for future communication with Hammer
 //-----------------------------------------------------------------------------
@@ -460,6 +473,7 @@ void NWCEdit::RememberEntityPosition( CBaseEntity *pEntity )
 
 	if ( !g_EntityPositions )
 	{
+		new GlobalCleanUp();
 		g_EntityPositions = new Vector[NUM_ENT_ENTRIES];
 		g_EntityOrientations = new QAngle[NUM_ENT_ENTRIES];
 		// have to save these too because some entities change the classname on spawn (e.g. prop_physics_override, physics_prop)
