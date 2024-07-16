@@ -9,27 +9,44 @@
 
 Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 
+
+
 ## Special thanks to...
+[Kristjan Skutta](https://github.com/Biohazard90) - for creating Alien Swarm Deferred!
 [maksw2](https://github.com/maksw2) - for being the first contributor and helping with compilation errors!
 
-## Features:
+
+## Features (sorted by most needed ones):
 - [x] Deferred lighting (from Alien Swarm Deferred)
 - [x] PBR (Physically based Rendering)
-- [ ] Ambient Occlusion
+- [ ] Linux Support
 - [ ] First Person Camera, ported to Alien Swarm branch
+- [ ] Ambient Occlusion
+- [ ] SourceDEFUN Mod Installer (does moving mod to sourcemods for you and more stuff)
 
 ...and probably more soon!
 
-## Cannot do anything?
-This might be happening because of my latest ruleset. I don't really know how to set these up, so if you cannot open an issue/pr, the contact me at discussions!
 
-## Requirements for Windows:
+## Building
 
+### Windows:
 You have to use Visual Studio 2022.
 To compile the shaders you must install Strawberry Perl, then execute ./materialsystem/swarmshaders/buildshaders.bat
 
+### Linux:
+Make sure to install these packages through your package manager:
+
+`cmake` `make` `perl` (This is just a wild guess)
+
+**UNFINISHED.**
+
+
 ## Information
 
+### Cannot do anything?
+This might be happening because of my latest ruleset. I don't really know how to set these up, so if you cannot open an issue/pr, the contact me at discussions!
+
+### Legacy README.txt file
 *The following new directories are required for the deferred implementation to work:*
 
 `materialsystem/`
