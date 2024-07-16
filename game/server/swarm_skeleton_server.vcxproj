@@ -177,7 +177,7 @@ if exist "$(TargetDir)"$(ProjectName).pdb copy "$(TargetDir)"$(ProjectName).pdb 
       <BrowseInformation>
       </BrowseInformation>
       <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>CompileAsCpp</CompileAs>
       <ErrorReporting>Prompt</ErrorReporting>
