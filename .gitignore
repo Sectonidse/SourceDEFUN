@@ -10,7 +10,3 @@ materialsystem/swarmshaders/Release_dx9/
 ipch/
 materialsystem/shaderlib/Debug/
 materialsystem/shaderlib/Release/
-*.vsidx
-/.vs
-/.vs/SourceDEFUN/v17/Solution.VC.db-shm
-/.vs/SourceDEFUN/v17/Browse.VC.db
