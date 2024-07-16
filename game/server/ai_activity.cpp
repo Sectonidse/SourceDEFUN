@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2005, Valve Corporation, All rights reserved. ============//
+//========= Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ============//
 //
 // Purpose: Activities that are available to all NPCs.
 //
@@ -686,6 +686,14 @@ void CAI_BaseNPC::InitDefaultActivitySR(void)
 	ADD_ACTIVITY_TO_SR( ACT_VM_FIZZLE );
 
 	// Multiplayer
+	ADD_ACTIVITY_TO_SR( ACT_MP_STAND_IDLE_PORTALGUN ); // Secton: add portal gun support...
+	ADD_ACTIVITY_TO_SR( ACT_MP_RUN_IDLE_PORTALGUN );   // oh my god valve! why couldn't you just write it in a variable file??!?
+	ADD_ACTIVITY_TO_SR( ACT_MP_CROUCH_IDLE_PORTALGUN );
+	ADD_ACTIVITY_TO_SR( ACT_MP_WALK_CROUCH_PORTALGUN );
+	ADD_ACTIVITY_TO_SR( ACT_MP_GESTURE_RANGE_ATTACK_PORTALGUN );
+	ADD_ACTIVITY_TO_SR( ACT_MP_GESTURE_RELOAD_PORTALGUN );
+	ADD_ACTIVITY_TO_SR( ACT_MP_JUMP_PORTALGUN );
+	
 	ADD_ACTIVITY_TO_SR( ACT_MP_STAND_IDLE );
 	ADD_ACTIVITY_TO_SR( ACT_MP_CROUCH_IDLE );
 	ADD_ACTIVITY_TO_SR( ACT_MP_CROUCH_DEPLOYED_IDLE );
