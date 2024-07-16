@@ -1,4 +1,4 @@
-1: [
+"1": [
   "This is Activities file! It has all the activities for NPC/Playermodels!                       ",
   "But how to work with it you say? Here's how:                                                   ",
   "  1. Every named key dictionary is a prefix for some activity.                                 ",
@@ -24,7 +24,7 @@
   "  A: I mean don't you like it? Would you like typing a lot of ACT_WEAPON_*_*? I would not.     "
 ],
 "ACT": {
-  0: ["INVALID", "RESET", "IDLE", "TRANSITION", "SCRIPT_CUSTOM_MOVE", "FLY", "HOVER", "GLIDE", "SWIM", "JUMP", "HOP", "LEAP", "LAND", "SHIPLADDER_UP", "SHIPLADDER_DOWN", "STRAFE_LEFT", "STRAFE_RIGHT", "ROLL_LEFT", "ROLL_RIGHT", "TURN_LEFT", "TURN_RIGHT", "CROUCH", "CROUCHIDLE", "STAND", "USE", "ALIEN_BURROW_IDLE", "ALIEN_BURROW_OUT"],
+  "0": ["INVALID", "RESET", "IDLE", "TRANSITION", "SCRIPT_CUSTOM_MOVE", "FLY", "HOVER", "GLIDE", "SWIM", "JUMP", "HOP", "LEAP", "LAND", "SHIPLADDER_UP", "SHIPLADDER_DOWN", "STRAFE_LEFT", "STRAFE_RIGHT", "ROLL_LEFT", "ROLL_RIGHT", "TURN_LEFT", "TURN_RIGHT", "CROUCH", "CROUCHIDLE", "STAND", "USE", "ALIEN_BURROW_IDLE", "ALIEN_BURROW_OUT"],
   "RUN": [0, "AIM", "CROUCH", "CROUCH_AIM", "PROTECTED"],
   "WALK": [0, "AIM", "CROUCH", "CROUCH_AIM"],
   "COVER": [0, "MED", "LOW"],
