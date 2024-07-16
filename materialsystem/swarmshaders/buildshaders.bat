@@ -3,7 +3,7 @@
 set TTEXE=time /t
 
 echo.
-echo -----<| buildshaders |>-----
+echo -----<[ buildshaders ]>-----
 %TTEXE% -cur-Q
 set tt_start=%ERRORLEVEL%
 set tt_chkpt=%tt_start%
