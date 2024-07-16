@@ -34,9 +34,8 @@ jobs:
     - uses: actions/checkout@v4
 
     # ENABLE THIS ON FIRST TIME SETUP
-    #- name: Install Strawberry Perl for Shaders compilation
-    #  run: choco install strawberryperl
-
+    - name: Install Strawberry Perl for Shaders compilation
+      run: choco install strawberryperl
     - name: Install Shader Dependencies
       run: cpan String::CRC32
 
