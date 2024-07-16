@@ -10,3 +10,6 @@ materialsystem/swarmshaders/Release_dx9/
 ipch/
 materialsystem/shaderlib/Debug/
 materialsystem/shaderlib/Release/
+/build
+/materialsystem/shaderlib/.vs
+*.user
