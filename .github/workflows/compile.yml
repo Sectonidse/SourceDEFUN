@@ -45,7 +45,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cd ./materialsystem/swarmshaders/
-        ./buildshaders.bat game_shader_generic_swarm
+        ./buildshaders.bat game_shader_generic_swarm deferred_shaders
     
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
