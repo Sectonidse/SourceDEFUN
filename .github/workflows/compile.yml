@@ -24,14 +24,10 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  Shaders:
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v4
-
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
 
     # ENABLE THIS ON FIRST TIME SETUP
     #- name: Install Strawberry Perl for Shaders compilation
@@ -40,10 +36,18 @@ jobs:
     - name: Install Shader Dependencies
       run: cpan String::CRC32
 
-
     - name: Compile Shaders
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: ./materialsystem/swarmshaders/buildshaders.bat game_shader_generic_swarm
+
+
+  Game:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
     
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
