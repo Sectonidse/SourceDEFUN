@@ -37,8 +37,11 @@ jobs:
     #  working-directory: ${{env.GITHUB_WORKSPACE}}
     #  run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
-    - name: Install Strawberry Perl for Shaders compilation
-      run: choco install strawberryperl
+    #- name: Install Strawberry Perl for Shaders compilation
+    #  run: choco install strawberryperl
+
+    - name: Install Perl Dependencies
+      run: cpan String::CRC32
 
     #- name: Build (Legacy VS2010 Version)
     #  working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -51,7 +54,6 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cd ./materialsystem/swarmshaders/
-        dir ../../devtools/bin/
         ./buildshaders.bat deferred_shaders
     
     - name: Build (VS2022 Version)
