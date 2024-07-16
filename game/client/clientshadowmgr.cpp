@@ -1,4 +1,4 @@
-//===== Copyright © 1996-2005, Valve Corporation, All rights reserved. ======//
+//===== Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ======//
 //
 // Purpose: 
 //
@@ -1404,7 +1404,7 @@ void CClientShadowMgr::CalculateRenderTargetsAndSizes( void )
 		char defaultRes[] = "2048";
 		m_nDepthTextureResolution = atoi( CommandLine()->ParmValue( "-sfm_shadowmapres", defaultRes ) );
 	}
-	m_nMaxDepthTextureShadows = bTools ? MAX_DEPTH_TEXTURE_SHADOWS_TOOLS : MAX_DEPTH_TEXTURE_SHADOWS;	// Just one shadow depth texture in games, more in tools
+	m_nMaxDepthTextureShadows = bTools ? 4 : 8;	// Just one shadow depth texture in games, more in tools
 }
 //-----------------------------------------------------------------------------
 // Constructor

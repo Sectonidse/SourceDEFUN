@@ -133,7 +133,8 @@ REM Run the makefile, generating minimal work/build list for fxc files, go ahead
 REM ****************
 rem cmake -G "NMake Makefiles" /S /C /F makefile.%inputbase% clean > clean.txt 2>&1
 echo Building inc files, asm vcs files, and VMPI worklist for %inputbase%...
-cmake -G "NMake Makefiles" /S /C /F makefile.%inputbase%
+REM https://cmake.org/cmake/help/v3.30/generator/NMake%20Makefiles.html very helpful of you cmake
+cmake -G "NMake Makefiles" /S makefile.%inputbase%
 
 REM ****************
 REM Copy the inc files to their target
