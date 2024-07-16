@@ -1,4 +1,10 @@
 # oh yes sir, the Linux support is gonna be here soon
+
+# TODO:
+#   WASNT TESTED YET
+#   MORE CMAKE THINGIES (line 81-85)
+#   CHECK IF IT WILL EVEN COMPILE
+
 cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
@@ -42,13 +48,12 @@ set(BUILD_GAME "hl2" CACHE STRING "Build Game")
 
 set_property(
 	CACHE BUILD_GAME PROPERTY STRINGS
-	"hl2"
-	"episodic"
+	"defunmod"
 )
 
 set(SRCDIR "${CMAKE_CURRENT_LIST_DIR}")
 set(GAMEDIR "${CMAKE_CURRENT_LIST_DIR}/game")
-set(THIRDPARTYDIR "${SRCDIR}/thirdparty")
+# It's a commented code don't highlight ok? | set(THIRDPARTYDIR "${SRCDIR}/thirdparty")
 
 # Compile options that are populated and set for each target depending on their type
 set(ADDITIONAL_COMPILE_OPTIONS_EXE)
@@ -93,6 +98,8 @@ include_directories(
 	"${SRCDIR}/public"
 	"${SRCDIR}/public/tier0"
 	"${SRCDIR}/public/tier1"
+	"${SRCDIR}/public/tier2" # Not sure if necessary
+	"${SRCDIR}/public/tier3" # Ditto
 )
 
 add_compile_definitions($<$<CONFIG:Debug>:DEBUG> $<$<CONFIG:Debug>:_DEBUG>)
