@@ -1,17 +1,15 @@
 @echo off
+echo "-----<[ DEFUN buildshaders ]>-----"
 
 set TTEXE=time /t
-
-echo.
-echo -----<[ buildshaders ]>-----
 %TTEXE% -cur-Q
 set tt_start=%ERRORLEVEL%
 set tt_chkpt=%tt_start%
 
 
-REM ****************
 REM usage: buildshaders <shaderProjectName>
-REM ****************
+
+echo Program started at %TTEXE%
 
 setlocal
 set arg_filename=%1
@@ -82,21 +80,20 @@ REM ****************
 REM ERRORS
 REM ****************
 :InvalidGameDirectory
-echo -
-echo Error: "%~3" is not a valid game directory.
+echo "-----X[ ERROR ]X-----"
+echo └ "%~3" is not a valid game directory.
 echo (The -game directory must have a gameinfo.txt file)
-echo -
 goto end
 
 :NoSourceDirSpecified
-echo ERROR: If you specify -game on the command line, you must specify -source.
+echo "-----X[ ERROR ]X-----"
+echo "└ If you specify -game on the command line, you must specify -source."
 goto usage
 goto end
 
 :NoShaderCompile
-echo -
-echo - ERROR: shadercompile.exe doesn't exist in %SDKBINDIR%
-echo -
+echo "-----X[ ERROR ]X-----"
+echo "└ shadercompile.exe doesn't exist in %SDKBINDIR%"
 goto end
 
 REM ****************
@@ -123,7 +120,7 @@ if exist vcslist.txt del /f /q vcslist.txt
 REM ****************
 REM Generate a makefile for the shader project
 REM ****************
-perl %SrcDirBase%/devtools/bin/updateshaders.pl -source .
+perl %SrcDirBase%/devtools/bin/updateshaders.pl -source %inputbase%
 
 
 REM ****************
