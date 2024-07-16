@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2005, Valve Corporation, All rights reserved. ============//
+//========= Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ============//
 //
 // Purpose: A panel "metaclass" is a name given to a particular type of 
 // panel with particular instance data. Such panels tend to be dynamically
@@ -232,8 +232,15 @@ CPanelMetaClassMgrImp::CPanelMetaClassMgrImp() : m_PanelTypeDict( true, 0, 32 )
 {
 }
 
+// Secton: Memory leak fix (https://developer.valvesoftware.com/wiki/Memory_Leak_Fixes#CPanelMetaClassMgrImp_class)
 CPanelMetaClassMgrImp::~CPanelMetaClassMgrImp()
 {
+	while(m_MetaClassKeyValues.Count()>0)
+	{
+		if(m_MetaClassKeyValues[0])
+			m_MetaClassKeyValues[0]->deleteThis();
+		m_MetaClassKeyValues.RemoveAt(0);
+	}
 }
 
 
