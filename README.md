@@ -1,5 +1,4 @@
-![sourceDEFUN Concept](https://github.com/user-attachments/assets/7a2a137a-fd81-4cbd-9346-d452e281fa14)
-(logo concept art)
+# ![SourceDEFUNLogo](https://github.com/user-attachments/assets/6c237c45-86cd-450d-b5ea-2160bd8fc295) SourceDEFUN
 
 **November 5, 2004: Valve releases Source Engine's SDK into public. People started making mods for the bestselling game, Half-Life 2. Years have passed and now we're stuck with Source SDK 2013, being the last publicly released and outdated since release** (based on Orange box's Source SDK, while Portal 2 branch is already finished) **SDK. Strata Source team formed to fix this, tried to be community's hero, but failed, because Valve's Licensing doesn't allow making licensed SDK to be released publicly. *It's time to do something about it.***
 
@@ -20,6 +19,9 @@ Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 - [ ] First Person Camera, ported to Alien Swarm branch
 
 ...and probably more soon!
+
+## Cannot do anything?
+This might be happening because of my latest ruleset. I'm don't really know how to set these up, so if you can open an issue/pr, the contact me at discussions!
 
 ## Requirements for Windows:
 
