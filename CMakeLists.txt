@@ -14,4 +14,4 @@ add_subdirectory(materialsystem/shaderlib)  # Assuming shaderlib is located here
 
 # Optional: Add targets to build all subdirectories at once
 # This is just an example, you might need to adjust it based on your project structure
-add_custom_target(build_all ALL COMMAND make VERBOSE_MAKEFILE=1)
+#add_custom_target(build_all ALL COMMAND make VERBOSE_MAKEFILE=1)
