@@ -91,3 +91,13 @@ All of them have comments like this:
 `game/client/deferred/deferred_client_common.h`
 `game/shared/deferred/deferred_shared_common.h`
 `game/server/deferred/deferred_server_common.h`
+
+
+------------------
+## SECRET: Impossible things that would be cool to have
+* Mapbase support
+* Native Vulkan (Not DXVK) support
+* Material System that can use PNG/JPG instead of VTF
+* Independent Texture sizes that doesn't fit into powers of 2
+* Subsurface Scattering
+* Exporting into a standalone game (this will require leaked Source Engine which shouldn't be used for commercial purposes)
