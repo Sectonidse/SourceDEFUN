@@ -1,4 +1,4 @@
-# ![SourceDEFUNLogo](https://github.com/user-attachments/assets/6c237c45-86cd-450d-b5ea-2160bd8fc295) SourceDEFUN
+![SourceDEFUN Logo in 3D](https://github.com/user-attachments/assets/397abd0b-926b-4347-a0a6-16bb58abb661)
 
 Compile status: [![Game](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/compile.yml/badge.svg)](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/compile.yml) [![Shaders](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/shader.yml/badge.svg)](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/shader.yml)
 
