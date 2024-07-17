@@ -41,7 +41,9 @@ You can watch the progress [here](https://github.com/users/Sectonidse/projects/2
 ## Building
 
 ### Windows:
-You have to use Visual Studio 2022.
+> [!WARNING]
+> Even though the solution was upgraded to support VS2022, it will be deprecated soon in favor of CMake.
+
 To compile the shaders you must install Strawberry Perl, then execute ./materialsystem/swarmshaders/buildshaders.bat
 
 ### Linux:
@@ -50,6 +52,10 @@ Make sure to install these packages through your package manager:
 `cmake` `make` `perl` (This is just a wild guess)
 
 **UNFINISHED.**
+
+
+> [!NOTE]
+> macOS won't be supported anymore because there is no reason: if you want to play anyway, just switch to Linux.
 
 
 ## Information
