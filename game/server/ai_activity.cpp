@@ -8,6 +8,54 @@
 #include "ai_activity.h"
 #include "ai_basenpc.h"
 #include "stringregistry.h"
+#include "json.hpp"  // Include nlohmann/json.hpp
+
+
+using json = nlohmann::json;
+using namespace std;
+
+void traverse_json(const json& j, const string& prefix, vector<string>& paths) {
+    if (j.is_object()) {
+        for (auto& [key, value] : j.items()) {
+            if (key == "1") {
+                continue;
+            }
+            string new_prefix = prefix + key;
+            if (key.back() != ' ') {new_prefix += '_';}
+            traverse_json(value, new_prefix, paths);
+        }
+    } else if (j.is_array()) {
+        for (size_t i = 0; i < j.size(); ++i) {
+            if (j[i].is_number() && j[i] == 0) {
+                continue;
+            }
+            if (i == 1) {
+                continue;
+            }
+            string key = to_string(i);
+            string new_prefix = prefix;
+            if (key != "0") {
+                new_prefix += key + '_';
+            }
+            traverse_json(j[i], new_prefix, paths);
+        }
+    } else if (j.is_string()) {
+        string path = prefix + j.get<string>();
+        paths.push_back(path);
+    }
+}
+
+vector<string> json_to_paths(const string& filename) {
+    // Read JSON file
+    ifstream file(filename);
+    json j;
+    file >> j;
+
+    // Store paths
+    vector<string> paths;
+    traverse_json(j, "", paths);
+    return paths;
+}
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -88,57 +136,12 @@ int CAI_BaseNPC::GetActivityID(const char* actName)
 //-----------------------------------------------------------------------------
 void CAI_BaseNPC::InitDefaultActivitySR(void) 
 {
-	ADD_ACTIVITY_TO_SR( ACT_INVALID );
-	ADD_ACTIVITY_TO_SR( ACT_RESET );
-	ADD_ACTIVITY_TO_SR( ACT_IDLE );
-	ADD_ACTIVITY_TO_SR( ACT_TRANSITION );
-	ADD_ACTIVITY_TO_SR( ACT_COVER );
-	ADD_ACTIVITY_TO_SR( ACT_COVER_MED );
-	ADD_ACTIVITY_TO_SR( ACT_COVER_LOW );
-	ADD_ACTIVITY_TO_SR( ACT_WALK );
-	ADD_ACTIVITY_TO_SR( ACT_WALK_AIM );
-	ADD_ACTIVITY_TO_SR( ACT_WALK_CROUCH );
-	ADD_ACTIVITY_TO_SR( ACT_WALK_CROUCH_AIM );
-	ADD_ACTIVITY_TO_SR( ACT_RUN );
-	ADD_ACTIVITY_TO_SR( ACT_RUN_AIM );
-	ADD_ACTIVITY_TO_SR( ACT_RUN_CROUCH );
-	ADD_ACTIVITY_TO_SR( ACT_RUN_CROUCH_AIM );
-	ADD_ACTIVITY_TO_SR( ACT_RUN_PROTECTED );
-	ADD_ACTIVITY_TO_SR( ACT_SCRIPT_CUSTOM_MOVE );
-	ADD_ACTIVITY_TO_SR( ACT_RANGE_ATTACK1 );
-	ADD_ACTIVITY_TO_SR( ACT_RANGE_ATTACK2 );
-	ADD_ACTIVITY_TO_SR( ACT_RANGE_ATTACK1_LOW );
-	ADD_ACTIVITY_TO_SR( ACT_RANGE_ATTACK2_LOW );
-	ADD_ACTIVITY_TO_SR( ACT_DIESIMPLE );
-	ADD_ACTIVITY_TO_SR( ACT_DIEBACKWARD );
-	ADD_ACTIVITY_TO_SR( ACT_DIEFORWARD );
-	ADD_ACTIVITY_TO_SR( ACT_DIEVIOLENT );
-	ADD_ACTIVITY_TO_SR( ACT_DIERAGDOLL );
-	ADD_ACTIVITY_TO_SR( ACT_FLY );
-	ADD_ACTIVITY_TO_SR( ACT_HOVER );
-	ADD_ACTIVITY_TO_SR( ACT_GLIDE );
-	ADD_ACTIVITY_TO_SR( ACT_SWIM );
-	ADD_ACTIVITY_TO_SR( ACT_JUMP );
-	ADD_ACTIVITY_TO_SR( ACT_HOP );
-	ADD_ACTIVITY_TO_SR( ACT_LEAP );
-	ADD_ACTIVITY_TO_SR( ACT_LAND );
-	ADD_ACTIVITY_TO_SR( ACT_CLIMB_UP );
-	ADD_ACTIVITY_TO_SR( ACT_CLIMB_DOWN );
-	ADD_ACTIVITY_TO_SR( ACT_CLIMB_DISMOUNT );
-	ADD_ACTIVITY_TO_SR( ACT_SHIPLADDER_UP );
-	ADD_ACTIVITY_TO_SR( ACT_SHIPLADDER_DOWN );
-	ADD_ACTIVITY_TO_SR( ACT_STRAFE_LEFT );
-	ADD_ACTIVITY_TO_SR( ACT_STRAFE_RIGHT );
-	ADD_ACTIVITY_TO_SR( ACT_ROLL_LEFT );
-	ADD_ACTIVITY_TO_SR( ACT_ROLL_RIGHT );
-	ADD_ACTIVITY_TO_SR( ACT_TURN_LEFT );
-	ADD_ACTIVITY_TO_SR( ACT_TURN_RIGHT );
-	ADD_ACTIVITY_TO_SR( ACT_CROUCH );
-	ADD_ACTIVITY_TO_SR( ACT_CROUCHIDLE );
-	ADD_ACTIVITY_TO_SR( ACT_STAND );
-	ADD_ACTIVITY_TO_SR( ACT_USE );
-	ADD_ACTIVITY_TO_SR( ACT_ALIEN_BURROW_IDLE );
-	ADD_ACTIVITY_TO_SR( ACT_ALIEN_BURROW_OUT );
+	string filename = "../../configs/activities.json";
+    vector<string> paths = json_to_paths(filename);
+
+    for (const auto& path : paths) {
+        ADD_ACTIVITY_TO_SR(path);
+    }
 
 	ADD_ACTIVITY_TO_SR( ACT_SIGNAL1 );
 	ADD_ACTIVITY_TO_SR( ACT_SIGNAL2 );
