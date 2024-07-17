@@ -8,7 +8,7 @@
 #include "ai_activity.h"
 #include "ai_basenpc.h"
 #include "stringregistry.h"
-#include "json.hpp"  // Include nlohmann/json.hpp
+#include "../../thirdparty/json.hpp"  // Include nlohmann/json.hpp
 
 
 using json = nlohmann::json;
