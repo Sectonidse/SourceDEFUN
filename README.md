@@ -24,9 +24,12 @@ Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
   - [ ] DXVK Support (man i wish it was possible to support Vulkan instead of DXVK)
 - [ ] First Person Camera, ported to Alien Swarm branch
 - [ ] Ambient Occlusion
+- [ ] Sandboxed Python Support (like VScript!)
 - [ ] SourceDEFUN Mod Installer (does moving mod to sourcemods for you and more stuff)
 
 ...and probably more soon!
+
+You can watch the progress [here](https://github.com/users/Sectonidse/projects/2/views/1).
 
 
 ## Building
