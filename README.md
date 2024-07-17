@@ -1,5 +1,7 @@
 # ![SourceDEFUNLogo](https://github.com/user-attachments/assets/6c237c45-86cd-450d-b5ea-2160bd8fc295) SourceDEFUN
 
+Compile status: [![Game](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/compile.yml/badge.svg)](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/compile.yml) [![Shaders](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/shader.yml/badge.svg)](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/shader.yml)
+
 **November 5, 2004: Valve releases Source Engine's SDK into public. People started making mods for the bestselling game, Half-Life 2. Years have passed and now we're stuck with Source SDK 2013, being the last publicly released and outdated since release** (based on Orange box's Source SDK, while Portal 2 branch is already finished) **SDK. Strata Source team formed to fix this, tried to be community's hero, but failed, because Valve's Licensing doesn't allow making licensed SDK to be released publicly. *It's time to do something about it.***
 
 > [!NOTE]
