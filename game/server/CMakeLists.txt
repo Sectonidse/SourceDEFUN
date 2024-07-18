@@ -1113,8 +1113,16 @@ add_library(swarm_skeleton_server SHARED ${SOURCE_FILES} ${HEADER_FILES})
 target_compile_features(swarm_skeleton_server PRIVATE)
 
 # Add preprocessor definitions
-set(PREPROCESSOR_DEFINITIONS WIN32;_WIN32;_DEBUG;DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;DLLNAME=server;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;COMPILER_MSVC;MEMOVERRIDE_MODULE=server;GAME_DLL;VECTOR;VERSION_SAFE_STEAM_API_INTERFACES;PROTECTED_THINGS_ENABLE;sprintf=use_Q_snprintf_instead_of_sprintf;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;SDK_SERVER_DLL;SDK_DLL)
-add_compile_definitions(${PREPROCESSOR_DEFINITIONS})
+if (WIN32)
+  set(PREPROCESSOR_DEFINITIONS WIN32;_WIN32;_DEBUG;DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;DLLNAME=server;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;COMPILER_MSVC;MEMOVERRIDE_MODULE=server;GAME_DLL;VECTOR;VERSION_SAFE_STEAM_API_INTERFACES;PROTECTED_THINGS_ENABLE;sprintf=use_Q_snprintf_instead_of_sprintf;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;SDK_SERVER_DLL;SDK_DLL)
+  add_compile_definitions(${PREPROCESSOR_DEFINITIONS})
+endif (WIN32)
+if (UNIX)
+  set(PREPROCESSOR_DEFINITIONS LINUX;_LINUX;_DEBUG;DEBUG;POSIX;_POSIX;UNIX;_UNIX;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;DLLNAME=server;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_GCC;MEMOVERRIDE_MODULE=server;GAME_DLL;VECTOR;VERSION_SAFE_STEAM_API_INTERFACES;PROTECTED_THINGS_ENABLE;sprintf=use_Q_snprintf_instead_of_sprintf;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;SDK_SERVER_DLL;SDK_DLL)
+  add_compile_definitions(${PREPROCESSOR_DEFINITIONS})
+endif (UNIX)
 
 # Optional: Set output directory for the library
-set_target_properties(swarm_skeleton_server PROPERTIES OUTPUT_DIRECTORY server.dll)
+if (WIN32)
+  set_target_properties(swarm_skeleton_server PROPERTIES OUTPUT_DIRECTORY server.dll)
+endif (WIN32)
