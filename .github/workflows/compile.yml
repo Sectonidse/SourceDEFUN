@@ -5,17 +5,7 @@
 
 name: Game
 
-on:
-  push:
-    branches: [ "master" ]
-    paths:
-      - common/**
-      - devtools/**
-      - game/**
-      - public/**
-      - responserules/**
-  pull_request:
-    branches: [ "master" ]
+on: release
 
 env:
   # Path to the solution file relative to the root of the project.
@@ -32,6 +22,21 @@ permissions:
 jobs:
   Windows:
     runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    # On Windows runners, let's ensure to have the Developer Command Prompt environment setup correctly.
+    # As used here the Developer Command Prompt created is targeting x64 and using the default the Windows SDK.
+    - uses: ilammy/msvc-dev-cmd@v1
+    
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      # Add additional options to the MSBuild command line here (like platform or verbosity level).
+      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
+      run: cmake -S . -B ./BUILD
+
+  Linux:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     
