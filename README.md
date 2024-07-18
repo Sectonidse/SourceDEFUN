@@ -21,6 +21,7 @@ Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 - [x] Deferred lighting (from Alien Swarm Deferred)
 - [x] PBR (Physically based Rendering)
 - [ ] Linux Support
+  - [ ] DXVK Support (man i wish it was possible to support Vulkan instead of DXVK)
 - [ ] First Person Camera, ported to Alien Swarm branch
 - [ ] Ambient Occlusion
 - [ ] SourceDEFUN Mod Installer (does moving mod to sourcemods for you and more stuff)

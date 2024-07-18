@@ -3,7 +3,7 @@
 set TTEXE=time /t
 
 echo.
-rem echo ==================== buildshaders %* ==================
+echo -----<| buildshaders |>-----
 %TTEXE% -cur-Q
 set tt_start=%ERRORLEVEL%
 set tt_chkpt=%tt_start%
@@ -69,9 +69,7 @@ set ChangeToDir=%SDKBINDIR%
 
 if /i "%4" NEQ "-source" goto NoSourceDirSpecified
 
-goto SKIPBULLSHITCHANGE
 set SrcDirBase=%~5
-:SKIPBULLSHITCHANGE
 
 REM ** use the -game parameter to tell us where to put the files
 set targetdir=%~3\shaders
@@ -125,16 +123,16 @@ if exist vcslist.txt del /f /q vcslist.txt
 REM ****************
 REM Generate a makefile for the shader project
 REM ****************
-perl %SrcDirBase%/devtools/bin/updateshaders.pl" -source .
+perl %SrcDirBase%/devtools/bin/updateshaders.pl -source .
 
 
 REM ****************
 REM Run the makefile, generating minimal work/build list for fxc files, go ahead and compile vsh and psh files.
 REM ****************
-rem cmake -G "NMake Makefiles" /S /C /F makefile.%inputbase% clean > clean.txt 2>&1
+rem cmake -G "NMake Makefiles" /S /C /F ./makefile.%inputbase%
 echo Building inc files, asm vcs files, and VMPI worklist for %inputbase%...
 REM https://cmake.org/cmake/help/v3.30/generator/NMake%20Makefiles.html very helpful of you cmake
-cmake -G "NMake Makefiles" /S makefile.%inputbase%
+cmake -G "NMake Makefiles" /S ./makefile.%inputbase%
 
 REM ****************
 REM Copy the inc files to their target

@@ -1,0 +1,37 @@
+{
+"1": [
+  "This is Activities file! It has all the activities for NPC/Playermodels!                       ",
+  "But how to work with it you say? Here's how:                                                   ",
+  "  1. Every named key dictionary is a prefix for some activity.                                 ",
+  "     1.1. Do you see dictionary ACT with array RUN and value AIM?                              ",
+  "     1.2. Well if we combine the path, we get: 'ACT_RUN_AIM!'                                  ",
+  "     1.3. Then this 'ACT_RUN_AIM' gets registered by ai_activity.cpp [we'll call it reader]    ",
+  "  2. Why is there a 0 in keys?                                                                 ",
+  "     2.1. It's there for a reason. It tells the reader to not expect any more dictionaties.    ",
+  "     2.2. So if i pick FLY from ACT, it'll be ACT_FLY!                                         ",
+  "  3. Why is there a space sometimes in keys?                                                   ",
+  "     3.1. It tells the compiler to not add underscore (_) to activity name.                    ",
+  "     3.2. Example: ACT > DIE  > BACKWARD = ACT_DIEBACKWARD                                     ",
+  "  4. Why is there a 0 in first value of array?                                                 ",
+  "     4.1. It tells the reader to use the current path as an activity.                          ",
+  "     4.2. Example: ACT > WALK > 0 = ACT_WALK                                                   ",
+  "  5. What does number 1 mean?                                                                  ",
+  "     5.1. It means 'stop reading. altogether'.                                                 ",
+  "     5.2. So if there array with key '1', then the reader will just ignore it.                 ",
+  "     5.3. That means you can make pseudo-comments here, like the one you're reading right now! ",
+  "     5.4. Example: ACT > 1 = [skip to next key/parent dictionary]                              ",
+  "-----------------------------------------------------------------------------------------------",
+  "Okay smart guy, well why won't you design a simpler system?                                    ",
+  "  A: I mean don't you like it? Would you like typing a lot of ACT_WEAPON_*_*? I would not.     "
+],
+"ACT": {
+  "0": ["INVALID", "RESET", "IDLE", "TRANSITION", "SCRIPT_CUSTOM_MOVE", "FLY", "HOVER", "GLIDE", "SWIM", "JUMP", "HOP", "LEAP", "LAND", "SHIPLADDER_UP", "SHIPLADDER_DOWN", "STRAFE_LEFT", "STRAFE_RIGHT", "ROLL_LEFT", "ROLL_RIGHT", "TURN_LEFT", "TURN_RIGHT", "CROUCH", "CROUCHIDLE", "STAND", "USE", "ALIEN_BURROW_IDLE", "ALIEN_BURROW_OUT"],
+  "RUN": [0, "AIM", "CROUCH", "CROUCH_AIM", "PROTECTED"],
+  "WALK": [0, "AIM", "CROUCH", "CROUCH_AIM"],
+  "COVER": [0, "MED", "LOW"],
+  "RANGE": ["ATTACK1", "ATTACK2", "ATTACK1_LOW", "ATTACK2_LOW"],
+  "DIE ": ["SIMPLE", "BACKWARD", "FORWARD", "VIOLENT", "RAGDOLL"],
+  "CLIMB": ["UP", "DOWN", "DISMOUNT"]
+},
+"1": "Needs finishing!"
+}
