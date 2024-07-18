@@ -1,4 +1,6 @@
-# ![SourceDEFUNLogo](https://github.com/user-attachments/assets/6c237c45-86cd-450d-b5ea-2160bd8fc295) SourceDEFUN
+![SourceDEFUN Logo in 3D](https://github.com/user-attachments/assets/397abd0b-926b-4347-a0a6-16bb58abb661)
+
+Compile status: [![Game](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/compile.yml/badge.svg)](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/compile.yml) [![Shaders](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/shader.yml/badge.svg)](https://github.com/Sectonidse/SourceDEFUN/actions/workflows/shader.yml)
 
 **November 5, 2004: Valve releases Source Engine's SDK into public. People started making mods for the bestselling game, Half-Life 2. Years have passed and now we're stuck with Source SDK 2013, being the last publicly released and outdated since release** (based on Orange box's Source SDK, while Portal 2 branch is already finished) **SDK. Strata Source team formed to fix this, tried to be community's hero, but failed, because Valve's Licensing doesn't allow making licensed SDK to be released publicly. *It's time to do something about it.***
 
@@ -23,16 +25,25 @@ Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 - [ ] Linux Support
   - [ ] DXVK Support (man i wish it was possible to support Vulkan instead of DXVK)
 - [ ] First Person Camera, ported to Alien Swarm branch
+- [ ] Chromium Embedded Framework
+  - [ ] Menu
+  - [ ] CSS Theme
+  - [ ] JS execution
 - [ ] Ambient Occlusion
+- [ ] Sandboxed Python Support (like VScript!)
 - [ ] SourceDEFUN Mod Installer (does moving mod to sourcemods for you and more stuff)
 
 ...and probably more soon!
+
+You can watch the progress [here](https://github.com/users/Sectonidse/projects/2/views/1).
 
 
 ## Building
 
 ### Windows:
-You have to use Visual Studio 2022.
+> [!WARNING]
+> Even though the solution was upgraded to support VS2022, it will be deprecated soon in favor of CMake.
+
 To compile the shaders you must install Strawberry Perl, then execute ./materialsystem/swarmshaders/buildshaders.bat
 
 ### Linux:
@@ -41,6 +52,10 @@ Make sure to install these packages through your package manager:
 `cmake` `make` `perl` (This is just a wild guess)
 
 **UNFINISHED.**
+
+
+> [!NOTE]
+> macOS won't be supported anymore because there is no reason: if you want to play anyway, just switch to Linux.
 
 
 ## Information
@@ -82,3 +97,13 @@ All of them have comments like this:
 `game/client/deferred/deferred_client_common.h`
 `game/shared/deferred/deferred_shared_common.h`
 `game/server/deferred/deferred_server_common.h`
+
+
+------------------
+## SECRET: Impossible things that would be cool to have
+* Mapbase support
+* Native Vulkan (Not DXVK) support
+* Material System that can use PNG/JPG instead of VTF
+* Independent Texture sizes that doesn't fit into powers of 2
+* Subsurface Scattering
+* Exporting into a standalone game (this will require leaked Source Engine which shouldn't be used for commercial purposes)

@@ -362,7 +362,9 @@ sub LoadShaderListFile
 	my $inputbase = shift;
 
 	my @srcfiles;
-	&MakeSureFileExists( "$inputbase.txt", 1, 0 );
+
+  	# Why was it checking if directory is a file?
+	# &MakeSureFileExists( "$inputbase.txt", 1, 0 );
 
 	open SHADERLISTFILE, "<$inputbase.txt" || die;
 	my $line;

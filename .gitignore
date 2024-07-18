@@ -15,3 +15,10 @@ materialsystem/shaderlib/Release/
 *.user
 /materialsystem/swarmshaders/.vs
 *.filters
+*.vsidx
+/.vs
+/.vs/SourceDEFUN/v17/Solution.VC.db-shm
+/.vs/SourceDEFUN/v17/Browse.VC.db
+/build
+/materialsystem/shaderlib/.vs
+/materialsystem/swarmshaders/.vs
