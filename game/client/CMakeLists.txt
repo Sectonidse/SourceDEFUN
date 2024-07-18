@@ -164,11 +164,6 @@ set(SOURCE_FILES
   cl_mat_stub.cpp
   classmap.cpp
   ../../public/client_class.cpp
-
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'
-      </PrecompiledHeader>
-
   client_factorylist.cpp
   client_thinklist.cpp
   clientalphaproperty.cpp
@@ -890,7 +885,7 @@ set(HEADER_FILES
   functionproxy.h
   fx.h
   fx_blood.h
-  cstrike/fx_cs_blood.h
+  #cstrike/fx_cs_blood.h
   fx_discreetline.h
   fx_envelope.h
   fx_explosion.h
@@ -922,7 +917,7 @@ set(HEADER_FILES
   hud_macros.h
   hud_numericdisplay.h
   hud_pdump.h
-  cstrike/hud_radar.h
+  #cstrike/hud_radar.h
   hud_vehicle.h
   hudelement.h
   hudtexturehandle.h
@@ -1244,7 +1239,7 @@ set(HEADER_FILES
   ../shared/animation.h
   ../shared/apparent_velocity_helper.h
   ../shared/base_playeranimstate.h
-  ../shared/cstrike/basecsgrenade_projectile.h
+  #../shared/cstrike/basecsgrenade_projectile.h
   ../shared/baseentity_shared.h
   ../shared/basegrenade_shared.h
   ../shared/hl2/basehlcombatweapon_shared.h
@@ -1272,7 +1267,7 @@ set(HEADER_FILES
   ../shared/eventlist.h
   ../shared/func_dust_shared.h
   ../shared/func_ladder.h
-  ../shared/cstrike/fx_cs_shared.h
+  #../shared/cstrike/fx_cs_shared.h
   ../shared/gameeventdefs.h
   ../shared/gamemovement.h
   ../shared/gamerules.h
@@ -1351,9 +1346,9 @@ set(HEADER_FILES
   ../shared/voice_gamemgr.h
   ../shared/voice_status.h
   ../shared/vphysics_sound.h
-  ../shared/cstrike/weapon_flashbang.h
-  ../shared/cstrike/weapon_hegrenade.h
-  ../shared/weapon_ifmsteadycam.h
+  #../shared/cstrike/weapon_flashbang.h
+  #../shared/cstrike/weapon_hegrenade.h
+  #../shared/weapon_ifmsteadycam.h
   ../shared/weapon_parse.h
   ../shared/weapon_proficiency.h
   game_controls/baseviewport.h
@@ -1397,38 +1392,38 @@ link_directories(
 # link libraries
 link_libraries(
   winmm.lib
-  ..\..\lib\public\bitmap.lib
-  ..\..\lib\public\bonesetup.lib
-  ..\..\lib\public\choreoobjects.lib
-  ..\..\lib\public\dmxloader.lib
-  ..\..\lib\public\interfaces.lib
-  ..\..\lib\common\jpeglib.lib
-  ..\..\lib\public\mathlib.lib
-  ..\..\lib\public\matsys_controls.lib
-  ..\..\lib\public\npsclient.lib
-  ..\..\lib\public\particles.lib
-  ..\..\lib\public\raytrace.lib
-  ..\..\lib\public\responserules_runtime.lib
-  ..\..\lib\public\steam_api.lib
-  ..\..\lib\public\tier0.lib
-  ..\..\lib\public\tier1.lib
-  ..\..\lib\public\tier2.lib
-  ..\..\lib\public\tier3.lib
-  ..\..\lib\public\vgui_controls.lib
-  ..\..\lib\public\videocfg.lib
-  ..\..\lib\public\vpklib.lib
-  ..\..\lib\public\vstdlib.lib
-  ..\..\lib\public\vtf.lib
+  ../../lib/public/bitmap.lib
+  ../../lib/public/bonesetup.lib
+  ../../lib/public/choreoobjects.lib
+  ../../lib/public/dmxloader.lib
+  ../../lib/public/interfaces.lib
+  ../../lib/common/jpeglib.lib
+  ../../lib/public/mathlib.lib
+  ../../lib/public/matsys_controls.lib
+  ../../lib/public/npsclient.lib
+  ../../lib/public/particles.lib
+  ../../lib/public/raytrace.lib
+  ../../lib/public/responserules_runtime.lib
+  ../../lib/public/steam_api.lib
+  ../../lib/public/tier0.lib
+  ../../lib/public/tier1.lib
+  ../../lib/public/tier2.lib
+  ../../lib/public/tier3.lib
+  ../../lib/public/vgui_controls.lib
+  ../../lib/public/videocfg.lib
+  ../../lib/public/vpklib.lib
+  ../../lib/public/vstdlib.lib
+  ../../lib/public/vtf.lib
 )
 
 add_library(swarm_skeleton_client SHARED ${SOURCE_FILES} ${HEADER_FILES})
 
 # Target compiler and platform (assuming Visual Studio)
-target_compile_features(swarm_skeleton_server PRIVATE)
+target_compile_features(swarm_skeleton_client PRIVATE)
 
 # Add preprocessor definitions
 set(PREPROCESSOR_DEFINITIONS WIN32;_WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;DLLNAME=client;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;COMPILER_MSVC;MEMOVERRIDE_MODULE=client;NO_STRING_T;CLIENT_DLL;VECTOR;VERSION_SAFE_STEAM_API_INTERFACES;PROTECTED_THINGS_ENABLE;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;ENABLE_HTMLWINDOW;fopen=dont_use_fopen;SDK_CLIENT_DLL;SDK_DLL;SPLIT_SCREEN_STUBS;GAMEUI_EMBEDDED;GAMEUI_EXPORTS;DEFERRED_DEV)
 add_compile_definitions(${PREPROCESSOR_DEFINITIONS})
 
 # Optional: Set output directory for the library
-set_target_properties(swarm_skeleton_server PROPERTIES OUTPUT_DIRECTORY client.dll)
+set_target_properties(swarm_skeleton_client PROPERTIES OUTPUT_DIRECTORY client.dll)

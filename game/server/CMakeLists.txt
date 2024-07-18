@@ -692,7 +692,7 @@ set(HEADER_FILES
   hierarchy.h
   ../shared/hintmessage.h
   ../shared/hintsystem.h
-  ../../common/hl2orange.spa.h
+  #../../common/hl2orange.spa.h
   hltvdirector.h
   ../shared/ichoreoeventcallback.h
   ../shared/igamesystem.h
@@ -841,7 +841,7 @@ set(HEADER_FILES
   hl2/npc_attackchopper.h
   hl2/npc_bullseye.h
   hl2/rotorwash.h
-  ../../public/mathlib/amd3dx.h
+  #../../public/mathlib/amd3dx.h
   ../shared/ammodef.h
   ../shared/base_playeranimstate.h
   base_transmit_proxy.h
@@ -929,7 +929,7 @@ set(HEADER_FILES
   ../../public/vstdlib/IKeyValuesSystem.h
   ilagcompensationmanager.h
   ../../public/vgui/ILocalize.h
-  ../../public/ImageLoader.h
+  #../../public/ImageLoader.h
   ../../public/materialsystem/imaterial.h
   ../../public/materialsystem/imaterialsystem.h
   ../../public/materialsystem/imaterialvar.h
@@ -1045,8 +1045,8 @@ set(HEADER_FILES
   variant_t.h
   ../../public/vcollide.h
   ../../public/vcollide_parse.h
-  ../../public/tier0/vcr_shared.h
-  ../../public/tier0/vcrmode.h
+  #../../public/tier0/vcr_shared.h
+  #../../public/tier0/vcrmode.h
   ../../public/mathlib/vector.h
   ../../public/mathlib/vector2d.h
   ../../public/mathlib/vector4d.h
