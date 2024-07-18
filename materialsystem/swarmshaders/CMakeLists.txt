@@ -3,58 +3,58 @@ project(game_shader_generic_deferred)
 # source files
 set(SOURCE_FILES
   BaseVSShader.cpp
-  blur.cpp
-  debug_lightingctrl.cpp
-  debug_radiosity_grid.cpp
-  debug_shadow.cpp
-  deferred_brush.cpp
-  deferred_decalModulate.cpp
   deferred_model.cpp
-  deferred_utility.cpp
-  defpass_composite.cpp
-  defpass_gbuffer.cpp
-  defpass_shadow.cpp
+  deferred_brush.cpp
   IDeferredExt.cpp
+  debug_shadow.cpp
   lighting_global.cpp
+  debug_lightingctrl.cpp
   lighting_pass_basic.cpp
   lighting_pass_volum.cpp
-  lighting_world.cpp
+  defpass_shadow.cpp
+  defpass_gbuffer.cpp
+  defpass_composite.cpp
   lighting_volume.cpp
-  pbr_dx9.cpp
-  radiosity_blend.cpp
-  radiosity_global.cpp
-  radiosity_propagate.cpp
-  screenspace_combine.cpp
-  screenspace_shading.cpp
-  volume_blend.cpp
+  lighting_world.cpp
   volume_prepass.cpp
+  blur.cpp
+  volume_blend.cpp
+  deferred_utility.cpp
+  radiosity_global.cpp
+  debug_radiosity_grid.cpp
+  radiosity_propagate.cpp
+  radiosity_blend.cpp
+  screenspace_shading.cpp
+  deferred_decalModulate.cpp
+  screenspace_combine.cpp
+  pbr_dx9.cpp
 )
 
 # header files
 set(HEADER_FILES
   BaseVSShader.h
-  commandbuilder.h
-  common_deferred_fxc.h
-  common_fxc.h
-  common_hlsl_cpp_consts.h
-  common_lighting_fxc.h
-  common_pragmas.h
-  common_ps_fxc.h
-  common_shadowmapping_fxc.h
-  common_vertexlitgeneric_dx9.h
-  common_vs_fxc.h
-  cpp_shader_constant_register_map.h
   deferred_context.h
-  deferred_global_common.h
   deferred_includes.h
   deferred_utility.h
-  defpass_composite.h
-  defpass_gbuffer.h
-  defpass_shadow.h
   IDeferredExt.h
   lighting_helper.h
+  deferred_global_common.h
+  cpp_shader_constant_register_map.h
+  common_fxc.h
+  common_hlsl_cpp_consts.h
+  common_pragmas.h
+  common_ps_fxc.h
+  common_vertexlitgeneric_dx9.h
+  common_vs_fxc.h
+  commandbuilder.h
+  common_deferred_fxc.h
   lighting_pass_basic.h
+  common_lighting_fxc.h
+  common_shadowmapping_fxc.h
   lighting_pass_volum.h
+  defpass_shadow.h
+  defpass_gbuffer.h
+  defpass_composite.h
   pbr_common_ps2_3_x.h
 )
 

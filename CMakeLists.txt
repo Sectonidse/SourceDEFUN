@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 project(SourceDEFUN VERSION 1.0.0)
 
 # Add subdirectories as projects
-#add_subdirectory(client)
-#add_subdirectory(server)
+add_subdirectory(game/client)
+add_subdirectory(game/server)
 add_subdirectory(materialsystem/swarmshaders)
 add_subdirectory(materialsystem/shaderlib)
