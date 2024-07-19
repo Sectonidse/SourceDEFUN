@@ -5,15 +5,7 @@
 
 name: Shaders
 
-on:
-  push:
-    branches: [ "master" ]
-    paths:
-      - materialsystem/**
-  pull_request:
-    branches: [ "master" ]
-    paths:
-      - materialsystem/**
+on: release
 
 env:
   # Path to the solution file relative to the root of the project.
