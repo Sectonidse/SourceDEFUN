@@ -24,15 +24,23 @@ jobs:
     # As used here the Developer Command Prompt created is targeting x64 and using the default the Windows SDK.
     - uses: ilammy/msvc-dev-cmd@v1
     
-    - name: Build
+    - name: Prepare to Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: cmake -S . -B ./BUILD
+
+    - name: Compile
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: cd ./BUILD && make
 
   Linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     
-    - name: Build
+    - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: cmake -S . -B ./BUILD
+
+    - name: Compile
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: cd ./BUILD && make
