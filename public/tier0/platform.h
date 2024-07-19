@@ -128,7 +128,7 @@ typedef void * HINSTANCE;
 
 	#endif // _X360
 
-#elif defined(POSIX)
+#elif defined(LINUX)
 	#define IsPlatformX360()		false
 	#define IsPlatformPS3()			false
 	#define IsPlatformWindows()		false
@@ -138,19 +138,9 @@ typedef void * HINSTANCE;
 	#define IsPlatformPosix()		true
 	#define PLATFORM_POSIX 1
 
-	#if defined( LINUX )
-		#define IsPlatformLinux() true
-		#define IsPlatformOSX() false
-		#define PLATFORM_LINUX 1
-	#elif defined ( OSX )
-		#define IsPlatformLinux() false
-		#define IsPlatformOSX() true
-		#define PLATFORM_OSX 1
-	#else
-		#define IsPlatformLinux() false
-		#define IsPlatformOSX() false
-	#endif
-
+	#define IsPlatformLinux() true
+	#define IsPlatformOSX() false
+	#define PLATFORM_LINUX 1
 #else
 	#error
 #endif
