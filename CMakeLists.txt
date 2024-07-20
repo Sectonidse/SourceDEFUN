@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 project(SourceDEFUN VERSION 1.0.0)
 
 set (CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (${IS_LINUX})
   add_compile_options(
@@ -16,7 +17,7 @@ if (${IS_LINUX})
 	  -Usprintf
 	  -Ustrncpy
 	  -UPROTECTED_THINGS_ENABLE
-	  $<${IS_LINUX}:-fabi-compat-version=2>
+	  -fabi-compat-version=2>
   )
 endif()
 
