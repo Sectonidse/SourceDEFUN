@@ -1,4 +1,4 @@
-//====== Copyright © 1996-2004, Valve Corporation, All rights reserved. =======
+//====== Copyright Â© 1996-2004, Valve Corporation, All rights reserved. =======
 //
 // Purpose: languages definition
 //
@@ -65,7 +65,7 @@ ELanguage PchLanguageToELanguage( const char *pchShortName )
 
 	// default to English
 	return k_Lang_English;
-}
+};
 
 
 //-----------------------------------------------------------------------------
@@ -81,7 +81,7 @@ const char *GetLanguageShortName( ELanguage eLang )
 
 	Assert( !"enum ELanguage order mismatched from Language_t s_LanguageNames, fix it!" );
 	return s_LanguageNames[0].m_pchShortName;
-}
+};
 
 //-----------------------------------------------------------------------------
 // Purpose: return the short string name used for this language by SteamUI
@@ -96,7 +96,7 @@ const char *GetLanguageName( ELanguage eLang )
 
    Assert( !"enum ELanguage order mismatched from Language_t s_LanguageNames, fix it!" );
    return s_LanguageNames[0].m_pchShortName;
-}
+};
 
 
 //-----------------------------------------------------------------------------
@@ -112,5 +112,5 @@ const char *GetLanguageVGUILocalization( ELanguage eLang )
 
 	Assert( !"enum ELanguage order mismatched from Language_t s_LanguageNames, fix it!" );
 	return s_LanguageNames[0].m_pchVGUILocalizationName;
-}
+};
 
