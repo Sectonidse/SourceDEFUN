@@ -14,14 +14,9 @@
 #pragma once
 #endif
 
-#include "color.h"
+#include "Color.h"
 #include "icommandline.h"
 #include <stdio.h>
-
-// For XBX_** functions
-#if defined( _X360 )
-#include "xbox/xbox_console.h"
-#endif
 
 // Used by CColorizedLoggingListener
 #if defined( _WIN32 )
