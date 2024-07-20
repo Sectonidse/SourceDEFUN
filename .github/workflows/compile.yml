@@ -43,4 +43,4 @@ jobs:
 
     - name: Compile
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cd ./BUILD && make -std=c++11
+      run: cd ./BUILD && make
