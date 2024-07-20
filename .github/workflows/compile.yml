@@ -41,8 +41,8 @@ jobs:
     - name: GCC G++ 4.2.4
       run: |
         sudo apt install g++-multilib
-        sudo wget https://bigsearcher.com/mirrors/gcc/releases/gcc-4.2.4/gcc-g++-4.2.4.tar.gz
-        sudo tar xzf gcc-g++-4.2.4.tar.gz
+        sudo wget https://bigsearcher.com/mirrors/gcc/releases/gcc-4.2.4/gcc-4.2.4.tar.gz
+        sudo tar xzf gcc-4.2.4.tar.gz
         cd ./gcc-4.2.4
         ./configure
         make
