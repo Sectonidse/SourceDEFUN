@@ -36,7 +36,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    
+
+    - name: Install some stuff!
+      run: apt install libc libstdc++=6 ia32-libs gcc=4.2.4 g++=4.2.4
+      
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: cmake -S . -B ./BUILD
