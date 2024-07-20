@@ -39,8 +39,9 @@ jobs:
 
     - name: Install some stuff!
       run: |
-        sudo add-apt-repository 'deb http://old-releases.ubuntu.com/ubuntu main'
-        sudo dpkg --add-architecture i386; sudo apt install gcc=4.2 g++-multilib
+        sudo wget https://bigsearcher.com/mirrors/gcc/releases/gcc-4.2.4/gcc-4.2.4.tar.gz
+        sudo dpkg -i ./gcc-4.2.4.tar.gz
+        sudo apt install g++-multilib
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
