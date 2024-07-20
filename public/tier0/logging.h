@@ -641,7 +641,7 @@ private:
 	int m_nGlobalStateIndex;
 	
 	// A pool of logging states used to store a stack (potentially per-thread).
-	static const int MAX_LOGGING_STATE_COUNT = 16;
+	const int MAX_LOGGING_STATE_COUNT = 16; // Secton: Was static, but throws error that static can't be in local class.
 	LoggingState_t m_LoggingStates[MAX_LOGGING_STATE_COUNT];
 
 	// Default policy class which determines behavior.
