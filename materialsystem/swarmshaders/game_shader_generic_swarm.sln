@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 14.00
+# Visual Studio 2022
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game_shader_generic_swarm", "game_shader_generic_swarm.vcxproj", "{C8D2DC83-E117-7576-7B43-10C844264C51}"
 EndProject
 Global

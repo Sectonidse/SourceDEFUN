@@ -5,25 +5,10 @@
 
 name: Game
 
-on:
-  push:
-    branches: [ "master" ]
-    paths:
-      - common/**
-      - devtools/**
-      - game/**
-      - public/**
-      - responserules/**
-  pull_request:
-    branches: [ "master" ]
+on: [release, pull_request, workflow_dispatch]
 
 env:
-  # Path to the solution file relative to the root of the project.
-  SOLUTION_FILE_PATH: ./SourceDEFUN.sln
-
   # Configuration type to build.
-  # You can convert this to a build matrix if you need coverage of multiple configuration types.
-  # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Debug
 
 permissions:
@@ -35,11 +20,27 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+    # On Windows runners, let's ensure to have the Developer Command Prompt environment setup correctly.
+    # As used here the Developer Command Prompt created is targeting x64 and using the default the Windows SDK.
+    - uses: ilammy/msvc-dev-cmd@v1
     
-    - name: Build
+    - name: Prepare to Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      # Add additional options to the MSBuild command line here (like platform or verbosity level).
-      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+      run: cmake -S . -B ./BUILD
+
+    - name: Compile
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: cd ./BUILD && make
+
+  Linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Prepare to build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: cmake -S . -B ./BUILD
+
+    - name: Compile
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: cd ./BUILD && make

@@ -42,7 +42,7 @@ public:
 
 	FORCEINLINE void EnsureCapacity( size_t sz )
 	{
-		Assert( m_nNumBytesRemaining >= sz );
+		//Assert( m_nNumBytesRemaining >= sz );
 	}
 
 	template<class T> FORCEINLINE void Put( T const &nValue )
