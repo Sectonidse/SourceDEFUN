@@ -39,7 +39,7 @@ jobs:
 
     - name: Install some stuff!
       run: |
-        sudo add-apt-repository 'deb [arch=i386] http://old-releases.ubuntu.com/ubuntu multiverse'
+        sudo add-apt-repository 'deb http://old-releases.ubuntu.com/ubuntu main'
         sudo dpkg --add-architecture i386; sudo apt install gcc=4.2 g++-multilib
       
     - name: Prepare to build
