@@ -42,7 +42,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cd ./thirdparty/gcc
-        sudo apt install ./cpp-4.2.4-51.deb ./g++-4.2.4-51.deb ./g++-multilib_4.2.4-51.deb ./gcc-4.2.4-51.deb ./libstdc++6-dev_4.2.4-51.deb
+        sudo apt install ./cpp-4.2.4-51.deb ./g++-4.2.4-51.deb ./g++-multilib_4.2.4-51.deb ./gcc-4.2.4-51.deb ./libstdc++6-dev_4.2.4-51.deb ./gcc-base_4.2.4-51.deb
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
