@@ -43,7 +43,7 @@ jobs:
         sudo apt install g++-multilib
         sudo wget https://bigsearcher.com/mirrors/gcc/releases/gcc-4.2.4/gcc-g++-4.2.4.tar.gz
         sudo tar xzf gcc-g++-4.2.4.tar.gz
-        cd ./gcc-g++-4.2.4
+        cd ./gcc-4.2.4
         ./configure
         make
         sudo make install
