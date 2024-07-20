@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   Windows:
+    if: false # Disable Windows Compilation, Reason: make doesn't compile, needs a contributor with Windows system to fix it.
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
@@ -37,11 +38,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install some stuff!
+    - name: GCC G++ 4.2.4
       run: |
-        sudo wget https://bigsearcher.com/mirrors/gcc/releases/gcc-4.2.4/gcc-4.2.4.tar.gz
-        sudo dpkg -i ./gcc-4.2.4.tar.gz
         sudo apt install g++-multilib
+        sudo wget https://bigsearcher.com/mirrors/gcc/releases/gcc-4.2.4/gcc-g++-4.2.4.tar.gz
+        sudo tar xzf gcc-g++-4.2.4.tar.gz
+        cd ./gcc-g++-4.2.4
+        ./configure
+        make
+        sudo make install
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
