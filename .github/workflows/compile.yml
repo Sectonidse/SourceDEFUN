@@ -38,15 +38,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: GCC G++ 4.2.4
+    - name: Dependencies
+      working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        sudo apt install g++-multilib
-        sudo wget https://bigsearcher.com/mirrors/gcc/releases/gcc-4.2.4/gcc-4.2.4.tar.gz
-        sudo tar xzf gcc-4.2.4.tar.gz
-        cd ./gcc-4.2.4
-        ./configure
-        make
-        sudo make install
+        cd ./thirdparty/gcc
+        sudo apt install ./cpp-4.2.4-51.deb ./g++-4.2.4-51.deb ./g++-multilib_4.2.4-51.deb ./gcc-4.2.4-51.deb ./libstdc++6-dev_4.2.4-51.deb
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
