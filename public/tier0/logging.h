@@ -14,14 +14,9 @@
 #pragma once
 #endif
 
-#include "color.h"
+#include "Color.h"
 #include "icommandline.h"
 #include <stdio.h>
-
-// For XBX_** functions
-#if defined( _X360 )
-#include "xbox/xbox_console.h"
-#endif
 
 // Used by CColorizedLoggingListener
 #if defined( _WIN32 )
@@ -343,7 +338,9 @@ class CColorizedLoggingListener : public CSimpleLoggingListener
 public:
 	CColorizedLoggingListener( bool bQuietPrintf = false, bool bQuietDebugger = false ) : CSimpleLoggingListener( bQuietPrintf, bQuietDebugger )
 	{
+#ifdef _WIN32
 		InitWin32ConsoleColorContext( &m_ColorContext );
+#endif   // Literally nothing for Linux :(
 	}
 
 	virtual void Log( const LoggingContext_t *pContext, const tchar *pMessage )
@@ -352,30 +349,32 @@ public:
 		{
 			int nPrevColor = -1;
 
+#ifdef _WIN32
 			if ( pContext->m_Color != UNSPECIFIED_LOGGING_COLOR )
 			{
 				nPrevColor = SetWin32ConsoleColor( &m_ColorContext,
 					pContext->m_Color.r(), pContext->m_Color.g(), pContext->m_Color.b(), 
 					MAX( MAX( pContext->m_Color.r(), pContext->m_Color.g() ), pContext->m_Color.b() ) > 128 );
 			}
+#endif
 
 			_tprintf( _T("%s"), pMessage );
 
+#ifdef _WIN32
 			if ( nPrevColor >= 0 )
 			{
 				RestoreWin32ConsoleColor( &m_ColorContext, nPrevColor );
 			}
 		}
 
-#ifdef _WIN32
 		if ( !m_bQuietDebugger && Plat_IsInDebugSession() )
 		{
 			Plat_DebugString( pMessage );
 		}
-#endif
 	}
 
 	Win32ConsoleColorContext_t m_ColorContext;
+#endif
 };
 #endif // !_X360
 

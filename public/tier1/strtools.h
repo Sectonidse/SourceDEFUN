@@ -13,7 +13,7 @@
 
 #ifdef _WIN32
 #pragma once
-#elif POSIX
+#elif LINUX
 #include <ctype.h>
 #include <wchar.h>
 #include <math.h>
@@ -56,7 +56,7 @@ char*	_V_strupr	( char *start );
 char*	_V_strlower	( char *start );
 int		_V_wcslen	( const wchar_t *pwch );
 
-#ifdef POSIX
+#ifdef LINUX
 inline char *strupr( char *start )
 {
       char *str = start;
@@ -79,7 +79,7 @@ inline char *strlwr( char *start )
       return start;
 }
 
-#endif // POSIX
+#endif // LINUX
 
 // there are some users of these via tier1 templates in used in tier0. but tier0 can't depend on vstdlib which means in tier0 we always need the inlined ones
 #if ( !defined( TIER0_DLL_EXPORT ) )
@@ -211,14 +211,14 @@ typedef char *  va_list;
 
 #endif   // _VA_LIST_DEFINED
 
-#elif POSIX
+#elif LINUX
 #include <stdarg.h>
 #endif
 
 #ifdef _WIN32
 #define CORRECT_PATH_SEPARATOR '\\'
 #define INCORRECT_PATH_SEPARATOR '/'
-#elif POSIX
+#else
 #define CORRECT_PATH_SEPARATOR '/'
 #define INCORRECT_PATH_SEPARATOR '\\'
 #endif
