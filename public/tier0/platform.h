@@ -436,7 +436,7 @@ typedef unsigned int		uint;
 
 	// Used for dll exporting and importing
 	#define DLL_EXPORT				extern "C" __attribute__ ((visibility("default")))
-	#define DLL_IMPORT				extern "C"
+	#define DLL_IMPORT				// extern "C"  // Secton: here i am just blindly commenting at an error points hoping that it'll work
 
 	// Can't use extern "C" when DLL exporting a class
 	#define DLL_CLASS_EXPORT		__attribute__ ((visibility("default")))
