@@ -15,8 +15,7 @@ permissions:
   contents: read
 
 jobs:
-  Windows:
-    if: false # Disable Windows Compilation, Reason: make doesn't compile, needs a contributor with Windows system to fix it.
+  Windows-make:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
@@ -25,13 +24,30 @@ jobs:
     # As used here the Developer Command Prompt created is targeting x64 and using the default the Windows SDK.
     - uses: ilammy/msvc-dev-cmd@v1
     
-    - name: Prepare to Build
+    - name: Generate Makefile
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cmake -S . -B ./BUILD
+      run: cmake -S . -G "Unix Makefiles" -B .\build
 
     - name: Compile
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cd ./BUILD && make
+      run: cd .\build && make
+  Windows-msbuild:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # On Windows runners, let's ensure to have the Developer Command Prompt environment setup correctly.
+      # As used here the Developer Command Prompt created is targeting x64 and using the default the Windows SDK.
+      - uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Generate solution
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: cmake -S . -G "Visual Studio 17 2022" -B .\build
+      
+      - name: Compile
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: cd .\build && msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SourceDEFUN.sln}}
+
 
   Linux:
     runs-on: ubuntu-latest
@@ -44,11 +60,10 @@ jobs:
         sudo apt remove lib32gcc-s1
         cd ./thirdparty/gcc
         sudo apt install ./cpp-4.2.4-51.deb ./g++-4.2.4-51.deb ./g++-multilib_4.2.4-51.deb ./gcc-4.2.4-51.deb ./libstdc++6-dev_4.2.4-51.deb ./gcc-base_4.2.4-51.deb ./gcc-multilib_4.2.4-51.deb lib32gcc-s1 ./lib32gcc1_4.2.4-1ubuntu3_amd64.deb
-      
-    - name: Prepare to build
+    - name: Generate Makefile
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cmake -S . -B ./BUILD
+      run: cmake -S . -B ./build
 
     - name: Compile
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cd ./BUILD && make
+      run: cd ./build && make
