@@ -42,8 +42,8 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         sudo apt remove lib32gcc-s1
-        cd ./thirdparty/gcc
-        sudo apt install ./cpp.deb ./g++-multilib.deb ./g++-multilib.deb ./g++.deb ./gcc-base.deb ./gcc-locales_all.deb ./gcc-multilib.deb ./gcc.deb ./lib32gcc1.deb ./lib32stdc++6.deb
+        sudo add-apt-repository 'deb [arch=amd64] https://archive.debian.org/debian gcc-4.3 main'
+        sudo apt install g++-4.3
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
