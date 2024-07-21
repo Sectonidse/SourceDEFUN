@@ -43,7 +43,7 @@ jobs:
       run: |
         sudo apt remove lib32gcc-s1
         cd ./thirdparty/gcc
-        sudo apt install ./cpp-4.2.4-51.deb ./g++-4.2.4-51.deb ./g++-multilib_4.2.4-51.deb ./gcc-4.2.4-51.deb ./libstdc++6-dev_4.2.4-51.deb ./gcc-base_4.2.4-51.deb ./gcc-multilib_4.2.4-51.deb lib32gcc-s1 ./lib32gcc1_4.2.4-1ubuntu3_amd64.deb
+        sudo apt install ./cpp-81.deb ./g++-81.deb ./g++-multilib-81.deb ./gcc-81.deb ./gcc-base-81.deb ./gcc-locales-81_all.deb ./gcc-multilib-81.deb ./libstdc++6-dev_81.deb
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
