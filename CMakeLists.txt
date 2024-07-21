@@ -7,7 +7,7 @@ set (CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # An attempt to disable testing because the compiler cannot compile (bruh)
-set (ADD_BUILD_OPTIONS "${ADD_BUILD_OPTIONS} -DBUILD_TESTING:BOOL=OFF")
+set(BUILD_TESTING OFF)
 
 if (${IS_LINUX})
   add_compile_options(
