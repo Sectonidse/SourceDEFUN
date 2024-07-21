@@ -42,8 +42,8 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         sudo apt remove lib32gcc-s1
-        sudo add-apt-repository 'deb [arch=amd64] https://archive.debian.org/debian main'
-        sudo apt install g++-4.3
+        sudo add-apt-repository 'deb [arch=amd64] https://archive.debian.org/debian/ buster main'
+        sudo apt install g++-4.2
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
