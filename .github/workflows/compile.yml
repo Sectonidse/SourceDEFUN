@@ -84,4 +84,4 @@ jobs:
 
     - name: Compile
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cd ./build && make GCC=gcc-4.2
+      run: cd ./BUILD && make GCC=gcc-4.2
