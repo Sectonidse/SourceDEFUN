@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # An attempt to disable testing because the compiler cannot compile (bruh)
 set(BUILD_TESTING OFF)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
 if (${IS_LINUX})
   add_compile_options(
