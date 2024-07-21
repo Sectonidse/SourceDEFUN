@@ -43,7 +43,7 @@ jobs:
       run: |
         sudo apt remove lib32gcc-s1
         cd ./thirdparty/gcc
-        sudo apt install ./cpp-81.deb ./g++-81.deb ./g++-multilib-81.deb ./gcc-81.deb ./gcc-base-81.deb ./gcc-locales-81_all.deb ./gcc-multilib-81.deb ./libstdc++6-dev_81.deb
+        sudo apt install ./cpp-81.deb ./g++-81.deb ./g++-multilib-81.deb ./gcc-81.deb ./gcc-base-81.deb ./gcc-locales-81_all.deb ./gcc-multilib-81.deb ./libstdc++6-dev_81.deb ./libmpfr4_3.1.3-2_amd64.deb
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
