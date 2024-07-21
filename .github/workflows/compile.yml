@@ -47,7 +47,10 @@ jobs:
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cmake -S . -B ./BUILD
+      run: |
+        export CC=/usr/local/bin/gcc
+        export CXX=/usr/local/bin/g++
+        cmake -S . -B ./BUILD
 
     - name: Compile
       working-directory: ${{env.GITHUB_WORKSPACE}}
