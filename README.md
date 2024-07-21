@@ -25,6 +25,7 @@ Quake >>> GoldSRC >>> Source >> Alien Swarm > Deferred > SourceDEFUN
 - [ ] Linux Support
   - [ ] DXVK Support (man i wish it was possible to support Vulkan instead of DXVK)
 - [ ] First Person Camera, ported to Alien Swarm branch
+- [ ] Increased map size (yes it's possible i checked however i'm not sure if that'll work) at the probable cost of decreased precision (won't be visible anyway)
 - [ ] Chromium Embedded Framework
   - [ ] Menu
   - [ ] CSS Theme
@@ -102,6 +103,7 @@ All of them have comments like this:
 ------------------
 ## SECRET: Impossible things that would be cool to have
 * Mapbase support
+* Upgraded VRAD that makes realistic lightmaps
 * Native Vulkan (Not DXVK) support
 * Material System that can use PNG/JPG instead of VTF
 * Independent Texture sizes that doesn't fit into powers of 2
