@@ -70,12 +70,18 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         sudo apt remove lib32gcc-s1
+        sudo add-apt-repository 'deb [trusted=yes][arch=amd64] https://archive.debian.org/debian/ lenny main'
+        sudo add-apt-repository 'deb [trusted=yes][arch=amd64] https://archive.debian.org/debian/ etch main'        
         cd ./thirdparty/gcc
-        sudo apt install ./cpp-4.2.4-51.deb ./g++-4.2.4-51.deb ./g++-multilib_4.2.4-51.deb ./gcc-4.2.4-51.deb ./libstdc++6-dev_4.2.4-51.deb ./gcc-base_4.2.4-51.deb ./gcc-multilib_4.2.4-51.deb lib32gcc-s1 ./lib32gcc1_4.2.4-1ubuntu3_amd64.deb
-    - name: Generate Makefile
+        sudo apt install g++-4.2 gcc-4.2
+      
+    - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cmake -S . -B ./build
+      run: |
+        export CC=gcc-4.2
+        export CXX=g++-4.2
+        cmake -S . -B ./BUILD
 
     - name: Compile
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cd ./build && make
+      run: cd ./build && make GCC=gcc-4.2
