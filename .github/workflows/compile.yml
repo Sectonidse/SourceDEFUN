@@ -42,7 +42,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         sudo apt remove lib32gcc-s1
-        sudo add-apt-repository 'deb [arch=amd64] https://archive.debian.org/debian gcc-4.3 main'
+        sudo add-apt-repository 'deb [arch=amd64] https://archive.debian.org/debian'
         sudo apt install g++-4.3
       
     - name: Prepare to build
