@@ -43,7 +43,7 @@ jobs:
       run: |
         sudo apt remove lib32gcc-s1
         sudo add-apt-repository 'deb [trusted=yes][arch=amd64] https://archive.debian.org/debian/ lenny main'
-        sudo apt install g++-4.2 gcc-4.2-multilib g++-4.2-multilib gcc-4.2-locales ./lib32gcc1_4.2.4-1ubuntu3_amd64.deb
+        sudo apt install g++-4.2 gcc-4.2-multilib g++-4.2-multilib gcc-4.2-locales
       
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
