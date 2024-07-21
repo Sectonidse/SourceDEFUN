@@ -48,8 +48,8 @@ jobs:
     - name: Prepare to build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        export CC=/usr/local/bin/gcc
-        export CXX=/usr/local/bin/g++
+        export CC=gcc-4.2
+        export CXX=g++-4.2
         cmake -S . -B ./BUILD
 
     - name: Compile
