@@ -46,7 +46,7 @@ jobs:
       
       - name: Compile
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: cd .\build && msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=x86 SourceDEFUN.sln
+        run: cd .\build && msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=Win32 SourceDEFUN.sln
   Windows-legacy:
     runs-on: windows-latest
     steps:
@@ -58,7 +58,7 @@ jobs:
 
       - name: Compile
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=x86 SourceDEFUN.sln
+        run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=Win32 SourceDEFUN.sln
 
 
   Linux:
