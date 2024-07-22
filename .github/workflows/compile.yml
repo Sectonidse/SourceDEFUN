@@ -42,7 +42,7 @@ jobs:
 
       - name: Generate solution
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: cmake -S . -G "Visual Studio 17 2022" -B .\build
+        run: cmake -S . -A Win32 -G "Visual Studio 17 2022" -B .\build
       
       - name: Compile
         working-directory: ${{env.GITHUB_WORKSPACE}}
